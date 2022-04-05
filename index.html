@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/examples/sidebars/sidebars.css">
+    <link rel="stylesheet" href="style.css">
+    <title>SJTU Theory-Driven Lab</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark bg-gradient navbar-dark navbar-fixed-top" style="font-size: 15px;">
+        <div class="container">
+            <a href="#" class="navbar-brand px-12">SJTU Interpretability ML lab</a>
+            <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <div class="nav-item">
+                        <a href="#people" class="nav-link">LAB MEMBER</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#news" class="nav-link">NEWS</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#research" class="nav-link">RESEARCH MAP</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#publications" class="nav-link">PUBLICATION</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#post" class="nav-link">RESEARCH POST</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#contact" class="nav-link">CONTACT</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shoucase -->
+    <section id="intro" class="bg-dark bg-gradient text-light p-4 text-center text-sm-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 px-5 pt-5">
+                    <font face="Verdana">
+                        <h1>
+                            Lab for Interpretability and Theory-Driven Deep Learning
+                        </h1>
+                        <!-- <h3> Our mission is to significantly improve people's lives through
+                            our work in Artificial Intelligence
+                        </h3> -->
+                    </font>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People -->
+    <section id="people" class="bg-light">
+        <div class="container p-5">
+            <h2 class="text-center text-dark mb-5"> Lab Member</h2>
+            <!-- <h3 class="text-dark mb-5"> Team</h3> -->
+            <div class="row g-5">
+                <div class="col-md-3 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="img/zqs.png" class="rounded-circle mb-3" style="width: 150px; height:150px;"
+                            alt="Avatar" />
+                        <h5 class="mb-2"><strong>Quanshi Zhang</strong></h5>
+                        <p class="text-muted">Leader</p>
+                        <span>
+                            <a href="http://qszhang.com/" class="btn btn-default btn-sm">Homepage</a>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="img/wsb.jpg" class="rounded-circle mb-3"
+                            style="width: 150px; height: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad </p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="p-0" style="text-align: center; vertical-align: middle;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle mb-3"
+                            style="width: 150px;" alt="Avatar" />
+                        <h5 class="mb-2"><strong>Shaobo Wang</strong></h5>
+                        <p class="text-muted">Undergrad</p>
+                        <span>
+                            <a href="mailto: zqs1022@sjtu.edu.cn" class="btn btn-default btn-sm">Email</a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Our Lab -->
+    <section id="about" class="bg-white text-dark">
+        <div class="container margin-right: auto;margin-left: auto; margin-top: 10px;">
+            <div class="h2 text-center pb-3">
+                About Our Lab</div>
+            <p class="text-sm-start px-5">
+                Due to the black-box nature of deep neural networks, interpretable machine learning has become an
+                important and compelling topic. However, the trustworthiness and applicability of interpretable ML has
+                been widely questioned in recent years. Core critisms include the following five aspects.
+            <div class="px-5">
+                <ul>
+                    <li>Current explanation methods are built upon different heuristics, lacking common theoretical
+                        foundations.</li>
+                    <li>It is infeasible to objectively evaluate the correctness of the explanation results, in the
+                        absence
+                        of ground truth explanations.</li>
+                    <li>There is still a large gap between the semantic explanation result (e.g., the attribution-based
+                        explanation) and the explanation of a DNN’s performance (e.g., the generalization power), which
+                        cannot be unified.</li>
+                    <li>Traditional semantic explanations cannot be used as feedbacks to guide the designing or training
+                        of
+                        DNNs, thereby boosting the DNN performance.</li>
+                    <li>Most current methods boosting the DNN performance are heuristic, and the theoretical mechanisms
+                        behind their success are largely missing.</li>
+                </ul>
+            </div>
+
+            </p>
+            <p class="text-sm-start px-5">
+                Therefore, we need to solve two key scientific problems:
+            <div class="px-5">
+                <ol>
+                    <li>how to develop a theoretical system to not
+                        only unify different explanations of the semantics encoded in a DNN (e.g., attribution-based
+                        explanations, taxonomy of semantic concepts, and etc), but also unify different explanations of
+                        the DNN
+                        performance (e.g., the generalization ability, the adversarial robustness, the adversarial
+                        transferability, and etc). Besides, it is highly desirable to bridge the two types of
+                        explanations. We
+                        believe that, an explanation system can be considered as trustworthy if the methods in the
+                        system can be
+                        mutually verified.</li>
+                    <li>how to extract the common mechanism behind different heuristic methods, which
+                        include both explanation methods and current popular methods boosting the DNN performance.</li>
+                </ol>
+            </div>
+            </p>
+            <p class="text-sm-start px-5">
+                可解释机器学习，近年来逐渐引起了越来越多的关注，对于增强黑盒DNN模型的可信度是非常关键的方面。然而，主要讲，现在所有的可解释性方法，都是百花齐放，百家争鸣。但是，它们并没有公共的理论，导致我们没办法验证其xx性
+            <div class="px-5">
+                <ul>
+                    <li>百花齐放，没有公共的理论</li>
+                    <li>解释的结果，没办法做到严谨的验证</li>
+                    <li>对性能的解释，和对语义（知识）的解释是两个层面，没法儿统一起来</li>
+                    <li>传统方法对知识的解释，没办法反馈指导，有效提升网络的性能</li>
+                    <li>当前提升网络性能的方法，都是启发式的，并不知道背后起作用的关键因素或内在机理
+                        因此，我们需要解决两个关键的科学问题,
+                        <ol>
+                            <li>统一体系，把对性能的解释和对语义的解释统一起来，而且要证明xxx；还要统一语义、泛化性、鲁棒性、迁移性；「只有当同一体系的xxx可以相互印证的情况下，才能认为是可靠的」。
+                            </li>
+                            <li>
+                                去芜存菁，找出前人启发式方法的公共机理。这里，包含对可解释性方法（归因），以及对传统提升模型性能方法（如网络泛化性、鲁棒性、迁移性）方法的去芜存菁。
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            </p>
+    </section>
+    <!-- News -->
+    <section id="news" class="bg-light text-dark p-5">
+        <div class="container">
+            <div class="h2 text-center pb-3">
+                News</div>
+            <p class="text-sm-start px-5">
+                <span class="label label-success">2020.04.05</span>
+                Update website. Check the preview version!!!
+            </p>
+            <p class="text-sm-start px-5">
+                <span class="label label-success">2020.04.03</span>
+                Initialize website.
+            </p>
+    </section>
+
+    <!-- Research Directions -->
+    <section id="research" class="p-5 bg-white text-center">
+        <div class="h2 text-center">
+            Research Map</div>
+        <container class="p-5">
+            <div class="col-lg-12" align="center">
+                <div id="myDiagramDiv" class="p-5" style="width:70%; height: 300px;"></div>
+            </div>
+            <p></p>
+        </container>
+
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="p-5 bg-light">
+        <div class="h2 text-center">
+            Selected Publications</div>
+        <div class="container" style="margin-top: 30px;">
+            <div class="col-xs-12 col-lg-4" style="text-align: center; vertical-align: middle;">
+                <img src="img/iclr(oral).png" width="350px" />
+            </div>
+
+            <div class="col-xs-12 col-md-8" style="text-align: left; vertical-align: middle;">
+                <strong>Discovering and Explaining the Representation Bottleneck of DNNs
+                </strong> <span class="label label-danger">Hot</span><br>
+                Huiqi Deng, Qihan Ren, Hao Zhang, and <strong>Quanshi Zhang (Correspondence)</strong><br>
+                <strong>ICLR 2021(oral)</strong><br>
+
+                <i> "Discovering and Explaining the Representation Bottleneck of DNNs!" </i><br>
+
+                <a href="https://arxiv.org/abs/2111.06236" class="btn btn-default btn-sm">Paper</a>
+                <a href="https://github.com/Nebularaid2000/bottleneck" class="btn btn-default btn-sm">Code</a>
+                <a href="https://zhuanlan.zhihu.com/p/468569001" class="btn btn-default btn-sm">Blog (Chinese)</a>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 30px;">
+            <div class="col-xs-12 col-lg-4" style="text-align: center; vertical-align: middle;">
+                <img src="img/nips-2021.png" width="350px" />
+            </div>
+
+            <div class="col-xs-12 col-md-8" style="text-align: left; vertical-align: middle;">
+                <strong>Interpreting Representation Quality of DNNs for 3D Point Cloud Processing
+                </strong><br>
+                Wen Shen, Qihan Ren, Dongrui Liu, <strong>Quanshi Zhang (Correspondence)</strong><br>
+                <strong>NeurIPS 2021</strong><br>
+
+                <i> "Interpreting Representation Quality of DNNs for 3D Point Cloud Processing!" </i><br>
+
+                <a href="https://arxiv.org/abs/2111.03549" class="btn btn-default btn-sm">Paper</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="post" class="p-5 bg-white">
+        <div class="h2 text-center">
+            Research Post</div>
+        <div style="margin-right: auto;margin-left: auto; margin-top: 10px; margin-bottom: 100px; width: 70%;">
+            <div style="text-align: center;">
+                <h3 id="Interaction">Interaction Interpretability of Neural Networks</h3>
+            </div>
+            <h4 id="c1"><strong> Chapter 1 Introduction</strong> </h4>
+            <p>
+                In 2018, I started to post on the online platform <a href=" https://zhuanlan.zhihu.com/p/264871522/">"Zhihu"</a> (similar
+                to
+                Quora) for my research about
+                the interpretability of DNNs. At that point my paper was finally accepted for the first time after being
+                repeatedly discouraged by the trend of pursuing higher prediction scores on a certain task. Only then
+                can I
+                say it out loud “beyond visualization, there is another path to interpretability.” Two years later, I
+                still
+                insist on posting, because I want everyone to know if all explanation methods are only self-justified,
+                but
+                cannot be verified by each other, then neither of them can be considered as a fully correct method.
+                There
+                are only a few solid studies in Explainable AI, such as the Shapley value, which satisfies four
+                mathematical
+                axioms for a "correct attribution heatmap", including linearity, nullity, symmetry, and efficiency.
+                Explanations that satisfy the above four axioms can be considered as rigorous explanations. If there is
+                no
+                theory to ensure the rigor and objectivity of explanation methods, then sooner or later the
+                interpretation
+                research will disappear.
+                (Note that this is not an article to discourage you from doing research on Explainable AI. I am
+                semi-confident in the future of explainable AI —— there is a chance that nothing you will achieve, that
+                you
+                will end up with publishing some papers, or that you will actually do some solid work. This is sometimes
+                the
+                most exciting and promising research. Therefore, I still keep going.)
+            </p>
+            <p>The "objective rigor" of interpretability often means "generality" and "uniqueness", i.e., "the
+                explanation
+                of the only standard. "Generality" is easy to understand, which means that the algorithm should be more
+                standard and have more connections to previous theories, rather than being a scenario-specific ad-hoc
+                technique. In contrast, the "uniqueness" has been rarely mentioned, some people even ask "why should the
+                explanation be unique?" Here we need to impose some restrictions on "what is a good explanation？" E.g.,
+                what
+                conditions must be satisfied by a good explanation, and then "uniqueness" is embodied in the unique
+                solution
+                under these conditions. To a smaller extent, conditions for explanations can be the four axioms
+                corresponding to the Shapley value; to a larger extent, conditions for explanations can also be the
+                scope of
+                application of the interpretability metrics. For example, the same metric can "explain semantics,
+                generalization, and transferability".
+            <div class="p-5 text-center" style="text-align:center; width:100%">
+                <iframe width="800" height="400" src="https://www.youtube.com/embed/DEvI5silI4Q"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <figcaption class="pt-3 px-3 card-img-bottom">
+                    <h2 class="h5 font-weight-bold mb-2 font-italic">Video 1</h2>
+                    <p class="mb-0 text-small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing
+                        elit, sed do eiusmod tempor.</p>
+                </figcaption>
+            </div>
+            </p>
+            <p>
+                Let's jump out of the topic that we just discussed and now let's face the whole picture of explainable
+                AI.
+                Whether a research direction is "alive" or "sustainable in the future" does not lie in the number of
+                papers
+                published in the field, nor in the number of citations, but in the number of essential problems in the
+                research direction that have not been addressed mathematically. (Here we refer to the solid modeling,
+                rather
+                than deliberately hooking up a new concept). After all, I still remember the saying by Professor
+                Song-Chun
+                Zhu "deep learning has died" in 2006, a sentence enough for me to digest for many years - when a person
+                blocks all the shortcuts for publishing papers, you need to plan a road from the mud, which may be the
+                right
+                way to go - although it is likely to die on the halfway, we have to be prepared.<br>
+            <figure class="p-5 text-center">
+                <img src="./blog-post/img/interaction-1.png" width="80%">
+                <figcaption class="pt-3 px-3 card-img-bottom">
+                    <h2 class="h5 font-weight-bold mb-2 font-italic">Figure 1</h2>
+                    <p class="mb-0 text-small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing
+                        elit, sed do eiusmod tempor.</p>
+                </figcaption>
+            </figure>
+            </p>
+            <p>Now, let's go back to talk about the explainable AI. The original purpose of explainable AI is very
+                simple,
+                that is, to provide theoretical guidance for the training and design of neural networks, and to test the
+                reliability of the information modeled by neural networks. In brief, a reliable explainable AI study
+                needs
+                to satisfy the following requirements simultaneously:
+            <ol>
+                <li>Direct theoretical modeling of the target to be explained is required, rather than proposing
+                    indirect
+                    algorithms intuitively.</li>
+                <li>Quantitative explanatory results are needed, instead of qualitative ones.</li>
+                <li>The objectivity (or rigor) of the explanatory results needs to be evaluated, rather than just
+                    requiring
+                    that the explanatory results look good.</li>
+                <li>For many emerging problems in explainable AI, sometimes we cannot provide a direct evaluation or the
+                    ground-truth of neural networks. Thus, we need a more solid theoretical system to prove the rigor of
+                    mathematical modeling.
+                    <ul>
+                        <li>For example, the rigor of Shapley value is guaranteed by the four axioms it satisfies.
+                            Similarly, an explanation method needs to satisfy a large number of axioms or exhibits good
+                            properties to demonstrate the rigor of the explanation method.</li>
+                        <li>Besides, if different explanation methods or metrics can be mutually validated, then such
+                            explanations are often more rigorous.</li>
+                    </ul>
+                </li>
+                <li>Explanation theories need to be extended to explaining various phenomena in real-world applications,
+                    or
+                    to provide direct guidance on the design and training of neural networks.</li>
+            </ol>
+
+
+            </p>
+
+            <h4 id="c2"><strong>Chapter 2</strong></h4>
+
+            <h4 id="ref"><strong>Reference</strong></h4>
+            <p></p>
+            <p>[1] F.-R. Stoter, S. Uhlich, A. Liutkus, and Y. Mitsufuji, "Open-unmix-a reference implementation for
+                music
+                source separation," Journal of Open Source Software, 2019.<br>
+                [2] A. Defossez, N. Usunier, L. Bottou, and F. Bach, "Music Source Separation in the Waveform Domain,"
+                HAL,
+                Tech. Rep. 02379796v1, 2019.
+            </p>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="bg-dark bg-gradient text-center text-white">
+        <div class="mt-5 pt-5 pb-5 footer bg-dark-gradient">
+            <div class="container">
+                <img src="http://en.sjtu.edu.cn/images/logo_white.png" alt=""
+                    style="max-width:100%;max-height:50px;margin-bottom:15px;">
+                <div class="row" style="vertical-align:middle">
+                    <div class="col-lg-3">
+                        <h3>Address</h3>
+                        <p> 800 Dongchuan RD. Minhang District, Shanghai, China
+                            <br> 上海市闵行区东川路800号
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Email </h3>
+                        <p>zqs1022@sjtu.edu.cn</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Telephone </h3>
+                        <p>+86 xxxxxxx <br>
+                            Post Code: 200240
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-sm6">
+                        <h3> Follow us</h3>
+                        <p> Media platform</p>
+                        <div class="row">
+                            <div class="media-list">
+                                <p>
+                                    <span>
+                                        <a href="https://github.com/zqs1022"><i class="bi bi-github"
+                                                style="font-size: 35px;"></i></a>
+                                        <a href="https://twitter.com/QuanshiZ"> <i class="bi bi-twitter"
+                                                style="font-size: 35px;"></i>
+                                        </a>
+
+                                        <a href="https://www.youtube.com/user/zqs1022/featured">
+                                            <i class="bi bi-youtube" style="font-size: 35px;"></i>
+                                        </a>
+                                    </span>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark bg-gradient text-center text-white fixed-bottom p-0">
+        <p class="text-white">Copyright &copy; 2022. Lab for Interpretability and Theory-Driven Deep Learning. All
+            rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="go-debug.js"></script>
+    <script src="HyperlinkText.js"></script>
+
+
+    <script text="text/javascript">
+        var $ = go.GraphObject.make;
+        myDiagram =
+            $(go.Diagram, "myDiagramDiv",
+                {
+                    contentAlignment: go.Spot.TopCenter,
+                    isReadOnly: true,
+                    allowSelect: false,
+                    allowDrop: false,
+                    allowMove: false,
+                });
+
+        myDiagram.nodeTemplate =
+            $(go.Node, "Auto",
+                $(go.Shape, "Ellipse", { fill: "lightskyblue" }),
+                $("HyperlinkText",
+                    node => "#" + node.data.name,
+                    node => node.data.name,
+                    { margin: 10, maxSize: new go.Size(80, 80), textAlign: "center" }
+                )
+            );
+        myDiagram.layout = $(go.TreeLayout, { angle: 90 });
+        myDiagram.model = new go.TreeModel(
+            [
+                { key: "1", name: "Interaction" },
+                { key: "2", parent: "1", name: "news" },
+                { key: "3", parent: "1", name: "Copricat" },
+                { key: "4", parent: "3", name: "Jellylorum" },
+                { key: "5", parent: "3", name: "Alonzo" }
+            ]);
+    </script>
+
+
+</body>
+
+</html>

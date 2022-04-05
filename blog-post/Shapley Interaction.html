@@ -1,0 +1,291 @@
+<!--
+ * :Author: Shaobo Wang
+ * :Date: 2022-04-05 01:27:27
+ * :LastEditors: Shaobo Wang
+ * :LastEditTime: 2022-04-05 13:26:33
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Interaction Interpretability of Neural Networks</title>
+    <link rel="stylesheet" type="text/css" href="resources/stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <div style='border-radius:0!important'></div>
+    <style type="text/css">
+        body {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+        }
+
+        .disclaimerbox {
+            background-color: #eee;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            padding: 20px;
+        }
+
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.rounded {
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        a:link,
+        a:visited {
+            color: #1367a7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #208799;
+        }
+
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .layered-paper-big {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The top layer shadow */
+                5px 5px 0 0px #fff,
+                /* The second layer */
+                5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The second layer shadow */
+                10px 10px 0 0px #fff,
+                /* The third layer */
+                10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The third layer shadow */
+                15px 15px 0 0px #fff,
+                /* The fourth layer */
+                15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fourth layer shadow */
+                20px 20px 0 0px #fff,
+                /* The fifth layer */
+                20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fifth layer shadow */
+                25px 25px 0 0px #fff,
+                /* The fifth layer */
+                25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The fifth layer shadow */
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+
+        .paper-big {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The top layer shadow */
+
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+
+
+        .layered-paper {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The top layer shadow */
+                5px 5px 0 0px #fff,
+                /* The second layer */
+                5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The second layer shadow */
+                10px 10px 0 0px #fff,
+                /* The third layer */
+                10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The third layer shadow */
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+</head>
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="width: 250px;">
+        <div class="col-12">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" href="#c1" role="tab"
+                    onclick="notify(this)">Chapter 1 Introduction</a>
+                <a class="list-group-item list-group-item-action" href="#c2" role="tab" onclick="notify(this)">Chapter
+                    2</a>
+                <a class="list-group-item list-group-item-action" href="#ref" role="tab" onclick="notify(this)">Chapter
+                    3</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Main Navigation-->
+
+<body>
+
+    <div style="margin-right: auto;margin-left: auto; margin-top: 50px; margin-bottom: 100px; width: 70%;">
+        <div style="text-align: center;">
+            <h1>Interaction Interpretability of Neural Networks</h1>
+        </div>
+        <h2 id="c1"> Chapter 1 Introduction </h2>
+        <p>
+            In 2018, I started to post on the online platform <a href="https://www.zhihu.com/">"Zhihu"</a> (similar to
+            Quora) for my research about
+            the interpretability of DNNs. At that point my paper was finally accepted for the first time after being
+            repeatedly discouraged by the trend of pursuing higher prediction scores on a certain task. Only then can I
+            say it out loud “beyond visualization, there is another path to interpretability.” Two years later, I still
+            insist on posting, because I want everyone to know if all explanation methods are only self-justified, but
+            cannot be verified by each other, then neither of them can be considered as a fully correct method. There
+            are only a few solid studies in Explainable AI, such as the Shapley value, which satisfies four mathematical
+            axioms for a "correct attribution heatmap", including linearity, nullity, symmetry, and efficiency.
+            Explanations that satisfy the above four axioms can be considered as rigorous explanations. If there is no
+            theory to ensure the rigor and objectivity of explanation methods, then sooner or later the interpretation
+            research will disappear.
+            (Note that this is not an article to discourage you from doing research on Explainable AI. I am
+            semi-confident in the future of explainable AI —— there is a chance that nothing you will achieve, that you
+            will end up with publishing some papers, or that you will actually do some solid work. This is sometimes the
+            most exciting and promising research. Therefore, I still keep going.)
+        </p>
+        <p>The "objective rigor" of interpretability often means "generality" and "uniqueness", i.e., "the explanation
+            of the only standard. "Generality" is easy to understand, which means that the algorithm should be more
+            standard and have more connections to previous theories, rather than being a scenario-specific ad-hoc
+            technique. In contrast, the "uniqueness" has been rarely mentioned, some people even ask "why should the
+            explanation be unique?" Here we need to impose some restrictions on "what is a good explanation？" E.g., what
+            conditions must be satisfied by a good explanation, and then "uniqueness" is embodied in the unique solution
+            under these conditions. To a smaller extent, conditions for explanations can be the four axioms
+            corresponding to the Shapley value; to a larger extent, conditions for explanations can also be the scope of
+            application of the interpretability metrics. For example, the same metric can "explain semantics,
+            generalization, and transferability".
+        <div class="embed-responsive embed-responsive-4by3 w-100 text-center">
+            <iframe class="w-80 card-img-top" width="600" height="400" src="https://www.youtube.com/embed/DEvI5silI4Q"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <figcaption class="pt-3 px-3 card-img-bottom">
+                <h2 class="h5 font-weight-bold mb-2 font-italic">Video 1</h2>
+                <p class="mb-0 text-small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit, sed do eiusmod tempor.</p>
+            </figcaption>
+        </div>
+        </p>
+        <p>
+            Let's jump out of the topic that we just discussed and now let's face the whole picture of explainable AI.
+            Whether a research direction is "alive" or "sustainable in the future" does not lie in the number of papers
+            published in the field, nor in the number of citations, but in the number of essential problems in the
+            research direction that have not been addressed mathematically. (Here we refer to the solid modeling, rather
+            than deliberately hooking up a new concept). After all, I still remember the saying by Professor Song-Chun
+            Zhu "deep learning has died" in 2006, a sentence enough for me to digest for many years - when a person
+            blocks all the shortcuts for publishing papers, you need to plan a road from the mud, which may be the right
+            way to go - although it is likely to die on the halfway, we have to be prepared.<br>
+        <figure class="rounded p-3 bg-white shadow-sm text-center">
+            <img src="./img/interaction-1.png" alt="" class="w-80 card-img-top">
+            <figcaption class="pt-3 px-3 card-img-bottom">
+                <h2 class="h5 font-weight-bold mb-2 font-italic">Figure 1</h2>
+                <p class="mb-0 text-small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit, sed do eiusmod tempor.</p>
+            </figcaption>
+        </figure>
+        </p>
+        <p>Now, let's go back to talk about the explainable AI. The original purpose of explainable AI is very simple,
+            that is, to provide theoretical guidance for the training and design of neural networks, and to test the
+            reliability of the information modeled by neural networks. In brief, a reliable explainable AI study needs
+            to satisfy the following requirements simultaneously:
+        <ol>
+            <li>Direct theoretical modeling of the target to be explained is required, rather than proposing indirect
+                algorithms intuitively.</li>
+            <li>Quantitative explanatory results are needed, instead of qualitative ones.</li>
+            <li>The objectivity (or rigor) of the explanatory results needs to be evaluated, rather than just requiring
+                that the explanatory results look good.</li>
+            <li>For many emerging problems in explainable AI, sometimes we cannot provide a direct evaluation or the
+                ground-truth of neural networks. Thus, we need a more solid theoretical system to prove the rigor of
+                mathematical modeling.
+                <ul>
+                    <li>For example, the rigor of Shapley value is guaranteed by the four axioms it satisfies.
+                        Similarly, an explanation method needs to satisfy a large number of axioms or exhibits good
+                        properties to demonstrate the rigor of the explanation method.</li>
+                    <li>Besides, if different explanation methods or metrics can be mutually validated, then such
+                        explanations are often more rigorous.</li>
+                </ul>
+            </li>
+            <li>Explanation theories need to be extended to explaining various phenomena in real-world applications, or
+                to provide direct guidance on the design and training of neural networks.</li>
+        </ol>
+
+
+        </p>
+
+        <h2 id="c2">Chapter 2</h2>
+
+        <h2 id="ref">Reference</h2>
+        <p></p>
+        <p>[1] F.-R. Stoter, S. Uhlich, A. Liutkus, and Y. Mitsufuji, "Open-unmix-a reference implementation for music
+            source separation," Journal of Open Source Software, 2019.<br>
+            [2] A. Defossez, N. Usunier, L. Bottou, and F. Bach, "Music Source Separation in the Waveform Domain," HAL,
+            Tech. Rep. 02379796v1, 2019.
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script text="text/javascript">
+        function notify(el) {
+            resetElements();
+            console.log(el.innerHTML);
+            el.classList.add('active');
+        }
+        function resetElements() {
+            // Get all elements with "active" class
+            var els = document.getElementsByClassName("active");
+
+            // Loop over Elements to remove active class;
+            for (var i = 0; i < els.length; i++) {
+                els[i].classList.remove('active')
+            }
+        }
+    </script>
+</body>
+
+</html>
