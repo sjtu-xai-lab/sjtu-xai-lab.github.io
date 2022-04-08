@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 00:43:42
+ * :LastEditTime: 2022-04-09 00:48:18
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -88,7 +88,7 @@ function init() {
       { position: new go.Point(0, -100), selectable: false },
       $(go.TextBlock, "Part", {
         row: 0,
-        font: "bold 18pt Helvetica, Arial, sans-serif",
+        font: "18pt Helvetica, Arial, sans-serif",
       }), // end row 0
       $(
         go.Panel,
