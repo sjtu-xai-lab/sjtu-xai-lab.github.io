@@ -329,7 +329,7 @@
         </div>
         <container class="p-5">
             <div class="col-lg-12" align="center">
-                <div id="myDiagramDiv" class="p-5" style="width:70%; height: 400px;"></div>
+                <div id="myDiagramDiv" class="p-5" style="width:70%; height: 1000px;"></div>
             </div>
             <p></p>
         </container>
@@ -590,41 +590,7 @@
     <script src="HyperlinkText.js"></script>
 
 
-    <script text="text/javascript">
-        var $ = go.GraphObject.make;
-        myDiagram =
-            $(go.Diagram, "myDiagramDiv",
-                {
-                    contentAlignment: go.Spot.TopCenter,
-                    isReadOnly: true,
-                    allowSelect: false,
-                    allowDrop: false,
-                    allowMove: false,
-                });
-
-        myDiagram.nodeTemplate =
-            $(go.Node, "Auto",
-                $(go.Shape, "Ellipse", { fill: "lightskyblue" }),
-                $("HyperlinkText",
-                    node => "#" + node.data.name,
-                    node => node.data.name,
-                    { margin: 10, maxSize: new go.Size(80, 80), textAlign: "center" }
-                )
-            );
-        myDiagram.layout = $(go.TreeLayout, { angle: 90 });
-        myDiagram.model = new go.TreeModel(
-            [
-                { key: "1", name: "Interaction" },
-                { key: "2", parent: "1", name: "news" },
-                { key: "3", parent: "1", name: "Copricat" },
-                { key: "4", parent: "3", name: "Jellylorum" },
-                { key: "5", parent: "3", name: "Alonzo" },
-                { key: "6", parent: "2", name: "Jellylorum" },
-                { key: "7", parent: "2", name: "Alonzo" },
-                { key: "8", parent: "2", name: "hi" },
-                { key: "9", parent: "7", name: "hey" }
-            ]);
-    </script>
+    <script text="text/javascript" src="research-map.js"></script>
 
 
 </body>
