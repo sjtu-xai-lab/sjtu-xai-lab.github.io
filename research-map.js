@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 00:40:22
+ * :LastEditTime: 2022-04-09 00:43:42
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -187,7 +187,7 @@ function init() {
       go.Shape,
       "RoundedRectangle",
       {
-        desiredSize: new go.Size(220, 70),
+        desiredSize: new go.Size(200, 72),
         fill: greengrad,
         margin: 5,
       },
