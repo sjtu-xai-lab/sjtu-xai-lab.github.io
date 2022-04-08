@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 00:36:16
+ * :LastEditTime: 2022-04-09 00:40:22
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -527,7 +527,7 @@ function init() {
     },
     {
       key: 19,
-      name: "Current studies to explore factors influencing the transferability are based on experiments",
+      name: "Current studies of boosting adversarial transferability are mainly based on heuristics and observasions",
     },
     {
       key: 20,
@@ -535,7 +535,7 @@ function init() {
     },
     {
       key: 21,
-      name: "Many techniques boosting the robustness are heuristic, whose mechanisms are largely missing",
+      name: "The essence of adversarial attack and robustness is still unclear",
     },
     // { key: 1, name: "Game-theoretic interactions" },
     // { key: 2, name: "Unifying different explanations" },
