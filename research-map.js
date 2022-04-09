@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 14:29:47
+ * :LastEditTime: 2022-04-09 14:32:08
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -60,8 +60,7 @@ function init() {
       // create a TreeLayout for the family tree
       layout: $(go.TreeLayout, 
         { angle: 90, 
-          arrangement: go.TreeLayout.ArrangementHorizontal,
-          layerSpacing : 80,
+          layerSpacing : 70,
           nodeSpacing: 0 
         }),
       // layout: $(go.TreeLayout, { nodeSpacing: 5 }),
