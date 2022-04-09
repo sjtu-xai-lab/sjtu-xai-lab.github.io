@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 09:14:00
+ * :LastEditTime: 2022-04-09 14:25:11
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -53,12 +53,17 @@ function init() {
     {
       allowCopy: false,
       isReadOnly: true,
-      allowSelect: true,
+      allowSelect: false,
       allowDrop: false,
       allowMove: false,
       // create a TreeLayout for the family tree
-      //   layout: $(go.TreeLayout, {angle:90, nodeSpacing: 5 }),
-      layout: $(go.TreeLayout, { nodeSpacing: 5 }),
+      layout: $(go.TreeLayout, 
+        { angle: 90, 
+          arrangement: go.TreeLayout.ArrangementHorizontal,
+          layerSpacing : 80,
+          nodeSpacing: 0 
+        }),
+      // layout: $(go.TreeLayout, { nodeSpacing: 5 }),
     }
   );
 
@@ -76,7 +81,7 @@ function init() {
   });
   var greengrad = $(go.Brush, "Linear", {
     0: "rgb(171, 224, 152)",
-    1: "rgb(46, 182, 44)",
+    1: "rgb(197, 232, 183)",
   });
 
   // Set up a Part as a legend, and place it directly on the diagram
@@ -144,30 +149,6 @@ function init() {
     )
   );
 
-  // get tooltip text from the object's data
-  function tooltipTextConverter(person) {
-    var str = "";
-    str += "Born: " + person.birthYear;
-    if (person.deathYear !== undefined) str += "\nDied: " + person.deathYear;
-    if (person.reign !== undefined) str += "\nReign: " + person.reign;
-    return str;
-  }
-
-  // define tooltips for nodes
-  var tooltiptemplate = $(
-    "ToolTip",
-    { "Border.fill": "whitesmoke", "Border.stroke": "black" },
-    $(
-      go.TextBlock,
-      {
-        font: "bold 8pt Helvetica, bold Arial, sans-serif",
-        wrap: go.TextBlock.WrapFit,
-        margin: 5,
-      },
-      new go.Binding("text", "", tooltipTextConverter)
-    )
-  );
-
   // define Converters to be used for Bindings
   function partBrushConverter(part) {
     if (part === "F") return bluegrad;
@@ -175,28 +156,37 @@ function init() {
     if (part === "T") return yellowgrad;
     return greengrad;
   }
-
+  // define Converters to be used for Bindings
+  function partSizeConverter(part) {
+    if (part === "F") return new go.Size(190, 100);
+    if (part === "P") return new go.Size(180, 100);
+    if (part === "T") return new go.Size(130, 100);
+    return new go.Size(150, 140);
+  }
+  // define Converters to be used for Fonts
   function partFontConverter(part) {
-    if (part === "F") return "18pt Helvetica, bold Arial, sans-serif";
+    if (part === "F") return "16pt Helvetica, bold Arial, sans-serif";
     if (part === "P") return "13pt Helvetica, bold Arial, sans-serif";
-    if (part === "T") return "10pt Helvetica,";
-    // return "8pt Helvetica, bold Arial, sans-serif";
+    if (part === "T") return "6pt Helvetica,";
+    return "6pt Helvetica, bold Arial, sans-serif";
   }
 
   // replace the default Node template in the nodeTemplateMap
   myDiagram.nodeTemplate = $(
     go.Node,
     "Auto",
-    { deletable: false, toolTip: tooltiptemplate },
+    { deletable: false },
     new go.Binding("text", "name"),
     $(
       go.Shape,
       "RoundedRectangle",
       {
-        desiredSize: new go.Size(200, 72),
+        // desiredSize: new go.Size(200, 72),
+        desiredSize: new go.Size(130, 120),
         fill: greengrad,
         margin: 5,
       },
+      new go.Binding("desiredSize", "part", partSizeConverter),
       {
         fill: greengrad,
         stroke: "black",
@@ -221,333 +211,101 @@ function init() {
         "HyperlinkText",
         (node) => "#" + node.data.name,
         (node) => node.data.name,
-        { 
-          margin: 5, 
-          maxSize: 
-          new go.Size(200, 150),
-          // font: "8pt Helvetica, bold Arial, sans-serif", 
-          textAlign: "center" },
+        {
+          margin: 5,
+          maxSize: new go.Size(200, 180),
+          // font: "8pt Helvetica, bold Arial, sans-serif",
+          textAlign: "center",
+        },
         new go.Binding("text", "name"),
         new go.Binding("font", "part", partFontConverter)
-      ),
-
-      //   $(go.TextBlock, new go.Binding("text", "kanjiName"))
+      )
     )
   );
 
   // define the Link template
   myDiagram.linkTemplate = $(
     go.Link, // the whole link panel
-    { routing: go.Link.Orthogonal, corner: 5, selectable: false },
+    // { routing: go.Link.Orthogonal, corner: 5, selectable: false },
+    { corner: 5, selectable: true },
     $(go.Shape)
   ); // the default black link shape
 
-  // here's the family data
-  //   var nodeDataArray = [
-  //     {
-  //       key: 0,
-  //       name: "Osahito",
-  //       gender: "M",
-  //       fullTitle: "Emperor Kōmei",
-  //       kanjiName: "統仁 孝明天皇",
-  //       posthumousName: "Komei",
-  //       birthYear: "1831",
-  //       deathYear: "1867",
-  //     },
-  //     {
-  //       key: 1,
-  //       parent: 0,
-  //       name: "Matsuhito",
-  //       gender: "M",
-  //       fullTitle: "Emperor Meiji",
-  //       kanjiName: "睦仁 明治天皇",
-  //       posthumousName: "Meiji",
-  //       birthYear: "1852",
-  //       deathYear: "1912",
-  //     },
-  //     {
-  //       key: 2,
-  //       parent: 1,
-  //       name: "Toshiko",
-  //       gender: "F",
-  //       fullTitle: "Princess Yasu-no-Miya Toshiko",
-  //       birthYear: "1896",
-  //       deathYear: "1978",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 3,
-  //       parent: 2,
-  //       name: "Higashikuni Morihiro",
-  //       gender: "M",
-  //       fullTitle: "Prince Higashikuni Morihiro",
-  //       kanjiName: "東久邇宮 盛厚王",
-  //       birthYear: "1916",
-  //       deathYear: "1969",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     { key: 4, parent: 3, name: "See spouse for descendants" },
-  //     {
-  //       key: 5,
-  //       parent: 2,
-  //       name: "Moromasa",
-  //       gender: "M",
-  //       fullTitle: "Prince Moromasa",
-  //       kanjiName: "師正王",
-  //       birthYear: "1917",
-  //       deathYear: "1923",
-  //     },
-  //     {
-  //       key: 6,
-  //       parent: 2,
-  //       name: "Akitsune",
-  //       gender: "M",
-  //       fullTitle: "Prince Akitsune",
-  //       kanjiName: "彰常王",
-  //       birthYear: "1920",
-  //       deathYear: "2006",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 7,
-  //       parent: 2,
-  //       name: "Toshihiko",
-  //       gender: "M",
-  //       fullTitle: "Prince Toshihiko",
-  //       kanjiName: "俊彦王",
-  //       birthYear: "1929",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 8,
-  //       parent: 1,
-  //       name: "Yoshihito",
-  //       gender: "M",
-  //       fullTitle: "Emperor Taishō",
-  //       kanjiName: "嘉仁 大正天皇,",
-  //       posthumousName: "Taisho",
-  //       birthYear: "1879",
-  //       deathYear: "1926",
-  //     },
-  //     {
-  //       key: 9,
-  //       parent: 8,
-  //       name: "Hirohito",
-  //       gender: "M",
-  //       fullTitle: "Emperor Showa",
-  //       kanjiName: "裕仁 昭和天皇",
-  //       posthumousName: "Showa",
-  //       birthYear: "1901",
-  //       deathYear: "1989",
-  //     },
-  //     {
-  //       key: 10,
-  //       parent: 9,
-  //       name: "Higashikuni Shigeko",
-  //       gender: "F",
-  //       spouse: "Higashikuni Morihiro",
-  //       spouseKanji: "東久邇宮 盛厚王",
-  //       fullTitle: "Princess Shigeko Higashikuni",
-  //       kanjiName: "東久邇成子",
-  //       birthYear: "1925",
-  //       deathYear: "1961",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 11,
-  //       parent: 10,
-  //       name: "Higashikuni Nobuhiko",
-  //       gender: "M",
-  //       fullTitle: "Prince Higashikuni Nobuhiko",
-  //       kanjiName: "東久邇宮 信彦王",
-  //       birthYear: "1945",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 12,
-  //       parent: 11,
-  //       name: "Higashikuni Yukihiko",
-  //       gender: "M",
-  //       fullTitle: "No Title",
-  //       birthYear: "1974",
-  //     },
-  //     {
-  //       key: 13,
-  //       parent: 10,
-  //       name: "Higashikuni Fumiko",
-  //       gender: "F",
-  //       fullTitle: "Princess Higashikuni Fumiko",
-  //       kanjiName: "文子女王",
-  //       birthYear: "1946",
-  //       statusChange:
-  //         "In 1947, lost imperial family status due to American abrogation of Japanese nobility",
-  //     },
-  //     {
-  //       key: 14,
-  //       parent: 10,
-  //       name: "Higashikuni Naohiko",
-  //       gender: "M",
-  //       fullTitle: "No Title",
-  //       kanjiName: "東久邇真彦",
-  //       birthYear: "1948",
-  //     },
-  //     {
-  //       key: 15,
-  //       parent: 14,
-  //       name: "Higashikuni Teruhiko",
-  //       gender: "M",
-  //       fullTitle: "No Title",
-  //     },
-  //     {
-  //       key: 16,
-  //       parent: 14,
-  //       name: "Higashikuni Matsuhiko",
-  //       gender: "M",
-  //       fullTitle: "No Title",
-  //     },
-  //     {
-  //       key: 17,
-  //       parent: 10,
-  //       name: "Higashikuni Hidehiko",
-  //       gender: "M",
-  //       fullTitle: "No Title",
-  //       kanjiName: "東久邇基博",
-  //       birthYear: "1949",
-  //     },
-  //     {
-  //       key: 18,
-  //       parent: 10,
-  //       name: "Higashikuni Yuko",
-  //       gender: "F",
-  //       fullTitle: "No Title",
-  //       kanjiName: "東久邇優子",
-  //       birthYear: "1950",
-  //     },
-  //     {
-  //       key: 19,
-  //       parent: 9,
-  //       name: "Sachiko",
-  //       gender: "F",
-  //       fullTitle: "Princess Sachiko",
-  //       kanjiName: "久宮祐子",
-  //       birthYear: "1927",
-  //       deathYear: "1928",
-  //     },
-  //     {
-  //       key: 20,
-  //       parent: 9,
-  //       name: "Kazuko Takatsukasa",
-  //       gender: "F",
-  //       fullTitle: "Kazuko, Princess Taka",
-  //       kanjiName: "鷹司 和子",
-  //       birthYear: "1929",
-  //       deathYear: "1989",
-  //       statusChange:
-  //         "In 1950, lost imperial family status by marrying a commoner",
-  //     },
-  //     {
-  //       key: 21,
-  //       parent: 9,
-  //       name: "Atsuko Ikeda",
-  //       gender: "F",
-  //       fullTitle: "Atsuko, Princess Yori",
-  //       kanjiName: "池田厚子",
-  //       birthYear: "1931",
-  //       statusChange:
-  //         "In 1952, lost imperial family status by marrying a commoner",
-  //     },
-  //     {
-  //       key: 22,
-  //       parent: 9,
-  //       name: "Akihito",
-  //       gender: "M",
-  //       fullTitle: "Reigning Emperor of Japan; Tennō",
-  //       kanjiName: "明仁 今上天皇",
-  //       posthumousName: "Heisei",
-  //       birthYear: "1933",
-  //     },
-  //   ];
-
-  //   // create the model for the family tree
-  //   myDiagram.model = new go.TreeModel(nodeDataArray);
   var nodeDataArray = [
     {
       key: 1,
       part: "F",
-      name: "Game-theoretic interactions",
+      name: "Game-theoretic\ninteractions",
     },
     {
       key: 2,
       part: "P",
-      name: "Unifying different explanations",
+      name: "Unifying different\nexplanations",
     },
     {
       key: 3,
       part: "P",
-      name: "Extracting the common mechanisms of different methods",
+      name: "Extracting the\ncommon mechanisms\nof different methods",
     },
     {
       key: 4,
       part: "T",
-      name: "Learning baseline values of Shapley value explanations",
+      name: "Learning\nbaseline values\nof Shapley value\nexplanations",
     },
     {
       key: 5,
       part: "T",
-      name: "Explain interactions between features in a DNN",
+      name: "Explain interactions\nbetween features\nin a DNN",
     },
-    { key: 6, part: "T", name: "Explain and unify attribution explanations" },
-    { key: 7, part: "T", name: "Explain the semantic concepts of a DNN" },
+    { key: 6, 
+      part: "T", 
+      name: "Explain and unify\nattribution\nexplanations" 
+    },
+    { key: 7, part: "T", name: "Explain the\nsemantic concepts\nof a DNN" },
     {
       key: 8,
       part: "T",
-      name: "Discover and explain the representation bottleneck of DNNs",
+      name: "Discover and\nexplain the\nrepresentation\nbottleneck\nof DNNs",
     },
-    { key: 9, part: "T", name: "Explain the generalization ability" },
-    { key: 10, part: "T", name: "Explain the adversarial transferability" },
-    { key: 11, part: "T", name: "Explain the aesthetic appreciation" },
-    { key: 12, part: "T", name: "Explain the adversarial robustness" },
+    { key: 9, part: "T", name: "Explain the\ngeneralization\nability" },
+    { key: 10, part: "T", name: "Explain the\nadversarial\ntransferability" },
+    { key: 11, part: "T", name: "Explain the\naesthetic\nappreciation" },
+    { key: 12, part: "T", name: "Explain the\nadversarial\nrobustness" },
     {
       key: 13,
-      name: "Address the theoretical flaws with baseline values of Shapley values",
+      name: "Address the\ntheoretical flaws \nwith baseline values\nof Shapley values",
     },
     {
       key: 14,
-      name: "Explain a DNN from interactions between features, instead of the importance of an individual feature",
+      name: "Explain a DNN\nfrom interactions\nbetween features,\ninstead of the\nimportance of an\n individual feature",
     },
     {
       key: 15,
-      name: "Attribution methods are based on various heuristics, lacking common theoretical mechanisms",
+      name: "Attribution methods\nare based on\nvarious heuristics,\nlacking common\ntheoretical\n mechanisms",
     },
     {
       key: 16,
-      name: "Provide a new taxonomy of semantic concepts w.r.t. complexities",
+      name: "Provide a new\ntaxonomy of\nsemantic concepts\nw.r.t. complexities",
     },
     {
       key: 17,
-      name: "Explore the common tendency of feature representations of DNNs",
+      name: "Explore the\ncommon tendency\nof feature\nrepresentations\nof DNNs",
     },
     {
       key: 18,
-      name: "Most techniques strengthening the generalization abilities are heuristic",
+      name: "Most techniques\nstrengthening the\ngeneralization\nabilities are\nheuristic",
     },
     {
       key: 19,
-      name: "Current studies of boosting adversarial transferability are mainly based on heuristics and observasions",
+      name: "Current studies of\nboosting adversarial\ntransferability are\nmainly based\non heuristics and\nobservasions",
     },
     {
       key: 20,
-      name: "Existing works lack a  mathematical modeling for the aesthetic appreciation",
+      name: "Existing works lack\na  mathematical\nmodeling for\nthe aesthetic\nappreciation",
     },
     {
       key: 21,
-      name: "The essence of adversarial attack and robustness is still unclear",
+      name: "The essence of\nadversarial attack\nand robustness\nis still unclear",
     },
     // { key: 1, name: "Game-theoretic interactions" },
     // { key: 2, name: "Unifying different explanations" },
