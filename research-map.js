@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 00:48:18
+ * :LastEditTime: 2022-04-09 09:14:00
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -57,9 +57,8 @@ function init() {
       allowDrop: false,
       allowMove: false,
       // create a TreeLayout for the family tree
-    //   layout: $(go.TreeLayout, {angle:90, nodeSpacing: 5 }),
-      layout: $(go.TreeLayout, {nodeSpacing: 5 }),
-
+      //   layout: $(go.TreeLayout, {angle:90, nodeSpacing: 5 }),
+      layout: $(go.TreeLayout, { nodeSpacing: 5 }),
     }
   );
 
@@ -177,6 +176,13 @@ function init() {
     return greengrad;
   }
 
+  function partFontConverter(part) {
+    if (part === "F") return "18pt Helvetica, bold Arial, sans-serif";
+    if (part === "P") return "13pt Helvetica, bold Arial, sans-serif";
+    if (part === "T") return "10pt Helvetica,";
+    // return "8pt Helvetica, bold Arial, sans-serif";
+  }
+
   // replace the default Node template in the nodeTemplateMap
   myDiagram.nodeTemplate = $(
     go.Node,
@@ -215,9 +221,15 @@ function init() {
         "HyperlinkText",
         (node) => "#" + node.data.name,
         (node) => node.data.name,
-        { margin: 5, maxSize: new go.Size(200, 150), textAlign: "center" },
-        new go.Binding("text", "name")
-      )
+        { 
+          margin: 5, 
+          maxSize: 
+          new go.Size(200, 150),
+          // font: "8pt Helvetica, bold Arial, sans-serif", 
+          textAlign: "center" },
+        new go.Binding("text", "name"),
+        new go.Binding("font", "part", partFontConverter)
+      ),
 
       //   $(go.TextBlock, new go.Binding("text", "kanjiName"))
     )
