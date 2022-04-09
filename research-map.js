@@ -2,7 +2,7 @@
  * :Author: Shaobo Wang
  * :Date: 2022-04-08 21:32:17
  * :LastEditors: Shaobo Wang
- * :LastEditTime: 2022-04-09 14:25:11
+ * :LastEditTime: 2022-04-09 14:29:47
  */
 
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
@@ -56,6 +56,7 @@ function init() {
       allowSelect: false,
       allowDrop: false,
       allowMove: false,
+      initialAutoScale: go.Diagram.Uniform,
       // create a TreeLayout for the family tree
       layout: $(go.TreeLayout, 
         { angle: 90, 
