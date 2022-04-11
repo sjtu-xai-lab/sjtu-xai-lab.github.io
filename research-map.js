@@ -52,7 +52,7 @@ function init() {
         go.TreeLayout,
         {
           angle: 90,
-          nodeSpacing: 10,
+          nodeSpacing: 5,
           layerSpacing: 60,
           layerStyle: go.TreeLayout.LayerSiblings,
           compaction: go.TreeLayout.CompactionBlock,
@@ -267,6 +267,7 @@ function init() {
     {
       key: 13,
       name: "\nAddress the theoretical flaws with baseline values of Shapley values\n",
+      group: "M"
     },
     {
       key: 14,
