@@ -157,8 +157,9 @@ function init() {
   function partSizeConverter(part) {
     if (part === "F") return new go.Size(220, 100);
     if (part === "P") return new go.Size(180, 100);
-    if (part === "T") return new go.Size(100, 100);
-    if (part === "M") return new go.Size(100, 120);
+    if (part === "T") return new go.Size(90, 100);
+    if (part === "M") return new go.Size(90, 120);
+    return new go.Size(90, 120);
   }
   // define Converters to be used for Fonts
   function partFontConverter(part) {
@@ -240,6 +241,7 @@ function init() {
       key: 3,
       name: "Extracting the common mechanisms of different methods",
       part: "P",
+      loc:"800 800"
     },
     {
       key: 4,
@@ -280,11 +282,11 @@ function init() {
     },
     {
       key: 17,
-      name: "\nExplore the common tendency of feature representations of DNNs\n",
+      name: "Explore the common tendency of feature representations of DNNs\n",
     },
     {
       key: 18,
-      name: "\nMost techniques strengthening the generalization abilities are heuristic\n",
+      name: "Most techniques strengthening the generalization abilities are heuristic\n",
     },
     {
       key: 19,
