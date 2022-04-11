@@ -44,6 +44,7 @@ function init() {
     go.Diagram,
     "myDiagramDiv", // id of DIV
     {
+      initialAutoScale: go.Diagram.UniformToFill,
       autoScale: go.Diagram.UniformToFill,
       initialContentAlignment: go.Spot.TopCenter,
       layout: $(
