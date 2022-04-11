@@ -47,6 +47,7 @@ function init() {
       initialAutoScale: go.Diagram.UniformToFill,
       autoScale: go.Diagram.UniformToFill,
       initialContentAlignment: go.Spot.TopCenter,
+      allowMove:false,
       layout: $(
         go.TreeLayout,
         {
@@ -156,9 +157,8 @@ function init() {
   function partSizeConverter(part) {
     if (part === "F") return new go.Size(220, 100);
     if (part === "P") return new go.Size(180, 100);
-    if (part === "T") return new go.Size(110, 100);
-    if (part === "M") return new go.Size(110, 120);
-    return new go.Size(110, 140);
+    if (part === "T") return new go.Size(100, 100);
+    if (part === "M") return new go.Size(100, 120);
   }
   // define Converters to be used for Fonts
   function partFontConverter(part) {
@@ -210,7 +210,7 @@ function init() {
             stroke: "black",
             margin: 3,
             maxLines: 6,
-            width: 130,
+            width: 110,
             textAlign: "center",
             verticalAlignment: go.Spot.Center,
             // wrap: go.TextBlock.WrapFit,
