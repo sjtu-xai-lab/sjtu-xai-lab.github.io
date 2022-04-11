@@ -47,7 +47,7 @@ function init() {
       initialAutoScale: go.Diagram.UniformToFill,
       autoScale: go.Diagram.UniformToFill,
       initialContentAlignment: go.Spot.TopCenter,
-      allowMove:false,
+      allowMove: false,
       layout: $(
         go.TreeLayout,
         {
@@ -56,7 +56,7 @@ function init() {
           layerSpacing: 60,
           layerStyle: go.TreeLayout.LayerSiblings,
           compaction: go.TreeLayout.CompactionBlock,
-          alignment: go.TreeLayout.AlignmentCenterChildren,
+          arrangement: go.TreeLayout.ArrangementVertical,
           treeStyle: go.TreeLayout.StyleLayered,
           //   breadthLimit: 1,
         }
@@ -158,8 +158,8 @@ function init() {
     if (part === "F") return new go.Size(220, 100);
     if (part === "P") return new go.Size(180, 100);
     if (part === "T") return new go.Size(90, 100);
-    if (part === "M") return new go.Size(90, 120);
-    return new go.Size(90, 120);
+    if (part === "M") return new go.Size(90, 150);
+    return new go.Size(90, 150);
   }
   // define Converters to be used for Fonts
   function partFontConverter(part) {
@@ -199,7 +199,6 @@ function init() {
             stroke: "black",
             stretch: go.GraphObject.Fill,
             alignment: go.Spot.TopCenter,
-            // desiredSize: new go.Size(110, 120),
           },
           new go.Binding("fill", "part", partBrushConverter)
         ),
@@ -210,11 +209,11 @@ function init() {
             // font: "bold 13px Helvetica, bold Arial, sans-serif",
             stroke: "black",
             margin: 3,
-            maxLines: 6,
-            width: 110,
+            // maxLines: 10,
+            width: 115,
+            height: 160,
             textAlign: "center",
             verticalAlignment: go.Spot.Center,
-            // wrap: go.TextBlock.WrapFit,
           },
           new go.Binding("desiredSize", "part", partSizeConverter),
           new go.Binding("text", "name"),
@@ -241,7 +240,6 @@ function init() {
       key: 3,
       name: "Extracting the common mechanisms of different methods",
       part: "P",
-      loc:"800 800"
     },
     {
       key: 4,
@@ -266,8 +264,8 @@ function init() {
     { key: 12, name: "Explain the adversarial robustness", part: "T" },
     {
       key: 13,
-      name: "\nAddress the theoretical flaws with baseline values of Shapley values\n",
-      group: "M"
+      name: "Address the theoretical flaws with baseline values of Shapley values",
+      group: "M",
     },
     {
       key: 14,
@@ -279,15 +277,15 @@ function init() {
     },
     {
       key: 16,
-      name: "\nProvide a new taxonomy of semantic concepts w.r.t. complexities\n",
+      name: "Provide a new taxonomy of semantic concepts w.r.t. complexities",
     },
     {
       key: 17,
-      name: "Explore the common tendency of feature representations of DNNs\n",
+      name: "Explore the common tendency of feature representations of DNNs",
     },
     {
       key: 18,
-      name: "Most techniques strengthening the generalization abilities are heuristic\n",
+      name: "Most techniques strengthening the generalization abilities are heuristic",
     },
     {
       key: 19,
@@ -295,7 +293,7 @@ function init() {
     },
     {
       key: 20,
-      name: "Existing works lack a mathematical modeling for the aesthetic appreciation\n",
+      name: "Existing works lack a mathematical modeling for the aesthetic appreciation",
     },
     {
       key: 21,
