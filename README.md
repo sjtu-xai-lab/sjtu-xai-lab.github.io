@@ -8,5 +8,5 @@
 - 关于blog：直接在blog后面添加即可。
 - 关于research map，我用的是go.js做的，需要修改index.html中最后的js代码。
 ## 其他平台搭建
-目前想法是有twitter, B站, Youtube, 微信公众号，知乎（已有）。方法待确认。
+无
 
