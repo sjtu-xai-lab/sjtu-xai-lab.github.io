@@ -265,7 +265,7 @@ function init() {
       "Spot",
       $(go.Shape, "RoundedRectangle", {
         width: 110,
-        height: 200,
+        height: 180,
         fill: greengrad,
         stroke: "black",
         stretch: go.GraphObject.Fill,
@@ -279,7 +279,7 @@ function init() {
           margin: 3,
           // maxLines: 10,
           width: 90,
-          height: 200,
+          height: 180,
           textAlign: "center",
           verticalAlignment: go.Spot.Center,
         },
