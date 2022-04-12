@@ -4174,8 +4174,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  font-size: 22px;
+  padding: 12px 15px;
+  font-size: 19px;
   line-height: 21px;
+  height: 45px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -5335,6 +5337,7 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
+  padding: 10px 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: -1;
@@ -5797,6 +5800,7 @@ button.close {
   padding: 20px;
 }
 .modal-footer {
+  padding: 20px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
