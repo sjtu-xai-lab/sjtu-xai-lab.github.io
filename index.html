@@ -77,7 +77,7 @@
             <div class="container pb-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-10">
-                        <div class="card">
+                        <div class="card border-card">
                             <div class="card-body p-4 bg-light">
                                 <div class="d-flex text-black">
                                     <div class="flex-shrink-0">
@@ -635,11 +635,12 @@
                 penalizing the interaction inside the perturbation in the attack. We optimize both the classification
                 loss function and the interaction-based loss function to generate the adversarial perturbation, which is
                 called the Interaction-Reduced Attack (IR Attack).</p>
-            <p> \begin{equation}
-                \max _{\delta}\left[\ell(h(x+\delta), y)-\lambda \ell_{\text {interaction }}\right], \quad \ell_{\text
-                {interaction }}=\mathbb{E}_{i, j}\left[I_{i j}(\delta)\right] \quad \text { s.t. }\|\delta\|_{p} \leq
-                \epsilon, x+\delta \in[0,1]^{n}
-                \end{equation}</p>
+            <!-- formula -->
+            \begin{equation}
+            \max _{\delta}\left[\ell(h(x+\delta), y)-\lambda \ell_{\text {interaction }}\right], \quad \ell_{\text
+            {interaction }}=\mathbb{E}_{i, j}\left[I_{i j}(\delta)\right] \quad \text { s.t. }\|\delta\|_{p} \leq
+            \epsilon, x+\delta \in[0,1]^{n}
+            \end{equation}
             <p>Experimental results show that the interaction-based loss function can significantly improve the
                 transferability of the adversarial perturbation. As shown in Table 1, compared with baseline methods,
                 the interaction loss function improves the transferability of adversarial examples by 8.2%~35.4%. It is
@@ -663,7 +664,8 @@
             <figure class="p-0 text-center">
                 <figcaption class="pt-3 px-5 card-img-bottom">
                     <p class="text-muted font-italic">
-                        Table 2: The success rates of \( L_\infty \) black-box attacks crafted on the ensemble model (RN-34+RN-
+                        Table 2: The success rates of \( L_\infty \) black-box attacks crafted on the ensemble model
+                        (RN-34+RN-
                         152+DN-121) against nine target models.</p>
                 </figcaption>
                 <img src="./blog-post/img/chapter-7/table2.png" width="80%">

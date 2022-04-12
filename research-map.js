@@ -77,8 +77,8 @@ function init() {
     1: "rgb(255, 212, 0)",
   });
   var greengrad = $(go.Brush, "Linear", {
-    0: "rgb(171, 224, 152)",
-    1: "rgb(197, 232, 183)",
+    0: "#98FB98",
+    1: "#90EE90",
   });
 
   // Set up a Part as a legend, and place it directly on the diagram
