@@ -164,8 +164,8 @@ function init() {
   function partFontConverter(part) {
     if (part === "F") return "16pt Helvetica, bold Arial, sans-serif";
     if (part === "P") return "13pt Helvetica, bold Arial, sans-serif";
-    if (part === "T") return "6pt Helvetica,";
-    return "6pt Helvetica, bold Arial, sans-serif";
+    if (part === "T") return "10pt Helvetica, bold Arial, sans-serif";
+    return "10pt Helvetica, bold Arial, sans-serif";
   }
 
   // Define a node template showing class names.
