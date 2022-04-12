@@ -158,7 +158,6 @@ function init() {
     if (part === "F") return new go.Size(220, 100);
     if (part === "P") return new go.Size(180, 100);
     if (part === "T") return new go.Size(90, 100);
-    if (part === "M") return new go.Size(90, 150);
     return new go.Size(90, 150);
   }
   // define Converters to be used for Fonts
@@ -168,59 +167,127 @@ function init() {
     if (part === "T") return "6pt Helvetica,";
     return "6pt Helvetica, bold Arial, sans-serif";
   }
-  function partSpaceConverter(part) {
-    if (part === "F") return 100;
-    if (part === "P") return 50;
-    if (part === "T") return 19;
-    return 10;
-  }
+
   // Define a node template showing class names.
   // Clicking on the node opens up the documentation for that class.
   diagram.nodeTemplate = $(
     go.Node,
     "Auto",
     $(
-      "HyperlinkText",
-      // compute the URL to open for the documentation
-      function (node) {
-        return "#" + node.data.name;
-      },
-      // define the visuals for the hyperlink, basically the whole node:
+      go.Panel,
+      "Auto",
       $(
-        go.Panel,
-        "Auto",
-        $(
-          go.Shape,
-          "RoundedRectangle",
-          {
-            fill: greengrad,
-            stroke: "black",
-            stretch: go.GraphObject.Fill,
-            alignment: go.Spot.TopCenter,
-          },
-          new go.Binding("fill", "part", partBrushConverter)
-        ),
+        go.Shape,
+        "RoundedRectangle",
+        {
+          fill: greengrad,
+          stroke: "black",
+          stretch: go.GraphObject.Fill,
+          alignment: go.Spot.TopCenter,
+        },
+        new go.Binding("fill", "part", partBrushConverter)
+      ),
 
-        $(
-          go.TextBlock,
-          {
-            // font: "bold 13px Helvetica, bold Arial, sans-serif",
-            stroke: "black",
-            margin: 3,
-            // maxLines: 10,
-            width: 115,
-            height: 160,
-            textAlign: "center",
-            verticalAlignment: go.Spot.Center,
-          },
-          new go.Binding("desiredSize", "part", partSizeConverter),
-          new go.Binding("text", "name"),
-          new go.Binding("font", "part", partFontConverter)
-        )
+      $(
+        go.TextBlock,
+        {
+          // font: "bold 13px Helvetica, bold Arial, sans-serif",
+          stroke: "black",
+          margin: 3,
+          // maxLines: 10,
+          width: 115,
+          height: 160,
+          textAlign: "center",
+          verticalAlignment: go.Spot.Center,
+        },
+        new go.Binding("desiredSize", "part", partSizeConverter),
+        new go.Binding("text", "name"),
+        new go.Binding("font", "part", partFontConverter)
       )
     )
   );
 
+  // for middle
+  diagram.nodeTemplateMap.add(
+    "middle",
+
+    $(
+      go.Node,
+      "Spot",
+      $(
+        "HyperlinkText",
+        // compute the URL to open for the documentation
+        function (node) {
+          return "#c" + node.data.chapter;
+        },
+        // define the visuals for the hyperlink, basically the whole node:
+        $(
+          go.Panel,
+          "Auto",
+          $(
+            go.Shape,
+            "RoundedRectangle",
+            {
+              fill: yellowgrad,
+              stroke: "black",
+              stretch: go.GraphObject.Fill,
+              alignment: go.Spot.TopCenter,
+            },
+            new go.Binding("fill", "part", partBrushConverter)
+          ),
+
+          $(
+            go.TextBlock,
+            {
+              // font: "bold 13px Helvetica, bold Arial, sans-serif",
+              stroke: "black",
+              margin: 3,
+              // maxLines: 10,
+              width: 115,
+              height: 160,
+              textAlign: "center",
+              verticalAlignment: go.Spot.Center,
+            },
+            new go.Binding("desiredSize", "part", partSizeConverter),
+            new go.Binding("text", "name"),
+            new go.Binding("font", "part", partFontConverter)
+          )
+        )
+      )
+    )
+  );
+  // for layer 3
+  diagram.nodeTemplateMap.add(
+    "leaf",
+
+    $(
+      go.Node,
+      "Spot",
+      $(go.Shape, "RoundedRectangle", {
+        width: 110,
+        height: 200,
+        fill: greengrad,
+        stroke: "black",
+        stretch: go.GraphObject.Fill,
+        alignment: go.Spot.TopCenter,
+      }),
+      $(
+        go.TextBlock,
+        {
+          // font: "bold 13px Helvetica, bold Arial, sans-serif",
+          stroke: "black",
+          margin: 3,
+          // maxLines: 10,
+          width: 90,
+          height: 200,
+          textAlign: "center",
+          verticalAlignment: go.Spot.Center,
+        },
+        new go.Binding("text", "name"),
+        new go.Binding("font", "part", partFontConverter)
+      )
+    )
+  );
   // Define a trivial link template with no arrowhead
   diagram.linkTemplate = $(
     go.Link,
@@ -243,59 +310,101 @@ function init() {
       key: 4,
       name: "Learning baseline values of Shapley value explanations",
       part: "T",
+      category: "middle",
     },
     {
       key: 5,
       name: "Explain interactions between features in a DNN",
       part: "T",
+      category: "middle",
     },
-    { key: 6, name: "Explain and unify attribution explanations", part: "T" },
-    { key: 7, name: "Explain the semantic concepts of a DNN", part: "T" },
+    {
+      key: 6,
+      name: "Explain and unify attribution explanations",
+      part: "T",
+      category: "middle",
+    },
+    {
+      key: 7,
+      name: "Explain the semantic concepts of a DNN",
+      part: "T",
+      category: "middle",
+    },
     {
       key: 8,
       part: "T",
       name: "Discover and explain the representation bottleneck of DNNs",
+      category: "middle",
     },
-    { key: 9, name: "Explain the generalization ability", part: "T" },
-    { key: 10, name: "Explain the adversarial transferability", part: "T" },
-    { key: 11, name: "Explain the aesthetic appreciation", part: "T" },
-    { key: 12, name: "Explain the adversarial robustness", part: "T" },
+    {
+      key: 9,
+      name: "Explain the generalization ability",
+      part: "T",
+      category: "middle",
+    },
+    {
+      key: 10,
+      name: "Explain the adversarial transferability",
+      part: "T",
+      category: "middle",
+      chapter: 7,
+    },
+    {
+      key: 11,
+      name: "Explain the aesthetic appreciation",
+      part: "T",
+      category: "middle",
+    },
+    {
+      key: 12,
+      name: "Explain the adversarial robustness",
+      part: "T",
+      category: "middle",
+    },
     {
       key: 13,
       name: "Address the theoretical flaws with baseline values of Shapley values",
-      group: "M",
+      category: "leaf",
     },
     {
       key: 14,
       name: "Explain a DNN from interactions between features, instead of the importance of an individual feature",
+      category: "leaf",
     },
     {
       key: 15,
       name: "Attribution methods are based on various heuristics, lacking common theoretical mechanisms",
+      category: "leaf",
     },
     {
       key: 16,
       name: "Provide a new taxonomy of semantic concepts w.r.t. complexities",
+      category: "leaf",
     },
     {
       key: 17,
       name: "Explore the common tendency of feature representations of DNNs",
+      category: "leaf",
     },
     {
       key: 18,
       name: "Most techniques strengthening the generalization abilities are heuristic",
+      category: "leaf",
     },
     {
       key: 19,
       name: "Current studies to explore factors influencing the transferability are based on experiments",
+      category: "leaf",
     },
     {
       key: 20,
       name: "Existing works lack a mathematical modeling for the aesthetic appreciation",
+      category: "leaf",
     },
     {
       key: 21,
       name: "Many techniques boosting the robustness are heuristic, whose mechanisms are largely missing",
+      category: "leaf",
     },
   ];
   var linkDataArray = [
