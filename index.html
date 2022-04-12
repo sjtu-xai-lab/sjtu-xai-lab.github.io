@@ -101,7 +101,9 @@
                                             Investigator</p>
                                         <p class="mb-2 pb-1 px-5" style="color: #2b2a2a;">
                                             Currently, I am an associate professor at <a
-                                                href="https://en.sjtu.edu.cn/">Shanghai Jiaotong University</a>, leading the <strong>Lab for Interpretability and Theory-Driven Deep Learning</strong>.
+                                                href="https://en.sjtu.edu.cn/">Shanghai Jiaotong University</a>, leading
+                                            the <strong>Lab for Interpretability and Theory-Driven Deep
+                                                Learning</strong>.
                                             Before that, I received the B.S. degree in machine intelligence at <a
                                                 href="https://english.pku.edu.cn/">Peking University</a>, China, in
                                             2009. I obtained the M.Eng. degree and the
@@ -329,7 +331,7 @@
         </div>
         <container class="p-5">
             <div class="col-lg-12" align="center">
-                <div id="myDiagramDiv" class="p-5" style="width:90%; height: 850px;"></div>
+                <div id="myDiagramDiv" class="p-5" style="width:80%; height: 750px;"></div>
             </div>
             <p></p>
         </container>
@@ -389,10 +391,10 @@
         <div class="h2 text-center">Research Post</div>
         <div
             style="margin-right: auto;margin-left: auto; margin-top: 10px; margin-bottom: 100px; width: 70%;text-align:justify; text-justify:inter-ideograph">
-            <div style="text-align: center;">
+            <!-- <div style="text-align: center;">
                 <h3 id="Interaction">Interaction Interpretability of Neural Networks</h3>
-            </div>
-            <h4 id="c1"><strong> Chapter 1 Introduction</strong> </h4>
+            </div> -->
+            <h3 id="c1"><strong> Chapter 1 Introduction</strong> </h3>
             <p>
                 In 2018, I started to post on the online platform <a
                     href=" https://zhuanlan.zhihu.com/p/264871522/">"Zhihu"</a> (similar
@@ -436,7 +438,7 @@
                 scope of
                 application of the interpretability metrics. For example, the same metric can "explain semantics,
                 generalization, and transferability".
-            <div class="p-5 text-center" style="text-align:center; width:100%">
+                <!-- <div class="p-5 text-center" style="text-align:center; width:100%">
                 <iframe width="800" height="400" src="https://www.youtube.com/embed/DEvI5silI4Q"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -447,7 +449,7 @@
                         adipisicing
                         elit, sed do eiusmod tempor.</p>
                 </figcaption>
-            </div>
+            </div> -->
             </p>
             <p>
                 Let's jump out of the topic that we just discussed and now let's face the whole picture of explainable
@@ -463,7 +465,7 @@
                 blocks all the shortcuts for publishing papers, you need to plan a road from the mud, which may be the
                 right
                 way to go - although it is likely to die on the halfway, we have to be prepared.<br>
-            <figure class="p-5 text-center">
+                <!-- <figure class="p-5 text-center">
                 <img src="./blog-post/img/interaction-1.png" width="80%">
                 <figcaption class="pt-3 px-3 card-img-bottom">
                     <h2 class="h5 font-weight-bold mb-2 font-italic">Figure 1</h2>
@@ -471,7 +473,7 @@
                         adipisicing
                         elit, sed do eiusmod tempor.</p>
                 </figcaption>
-            </figure>
+            </figure> -->
             </p>
             <p>Now, let's go back to talk about the explainable AI. The original purpose of explainable AI is very
                 simple,
@@ -502,13 +504,15 @@
                     or
                     to provide direct guidance on the design and training of neural networks.</li>
             </ol>
-
-
             </p>
 
-            <h4 id="c2"><strong>Chapter 2</strong></h4>
+            <h3 id="c2"><strong>Chapter 2</strong></h3>
+            <h3 id="c3"><strong>Chapter 3</strong></h3>
+            <h3 id="c4"><strong>Chapter 4</strong></h3>
+            <h3 id="c5"><strong>Chapter 5</strong></h3>
+            <h3 id="c6"><strong>Chapter 6</strong></h3>
 
-            <h4 id="ref"><strong>Reference</strong></h4>
+            <!-- <h4 id="ref"><strong>Reference</strong></h4>
             <p></p>
             <p>[1] F.-R. Stoter, S. Uhlich, A. Liutkus, and Y. Mitsufuji, "Open-unmix-a reference implementation for
                 music
@@ -516,7 +520,163 @@
                 [2] A. Defossez, N. Usunier, L. Bottou, and F. Bach, "Music Source Separation in the Waveform Domain,"
                 HAL,
                 Tech. Rep. 02379796v1, 2019.
+            </p> -->
+            <h3 id="c7"><strong> Chapter 7 From Practice to Theory: Adversarial Transferability of Neural
+                    Networks</strong> </h3>
+            <h4><strong>Introduction</strong></h4>
+            <p>
+                Hello, we are Xin Wang and Jie Ren, students of Dr. Quanshi Zhang. In this article, we would like to
+                share some new insights to adversarial transferability of DNNs.
             </p>
+            <p>
+                Reference: Xin Wang, Jie Ren, Shuyun Lin, Xiangming Zhu, Yisen Wang, Quanshi Zhang, "A Unified Approach
+                to Interpreting and Boosting Adversarial Transferability" in ICLR 2021
+            </p>
+            <p><i>—— Note that this paper is not based on empirical experiments, instead, we investigated the nature of
+                    adversarial transferability of DNN (though not very rigorously), while the experiments serve as an
+                    aid to verification. Please pay attention to this.</i></p>
+            <p>
+                Although deep learning has been rapidly developed in the last decades, they have encountered
+                bottlenecks. On the one hand, many algorithms are proposed based on trial and error from empirical
+                experiments, which lack solid and reliable theoretical foundations; on the other hand, these studies
+                usually based on simple assumptions, which are detached from the actual problems and cannot guide the
+                design and optimization of DNNs.
+            </p>
+            <p>
+                Therefore, we believe the new trend for deep learning is to build a complete theoretical system and use
+                it to guide applications. If an algorithm only stays at the experimental level without theoretical
+                explanation, then such an algorithm just like “Shennong”, a divine farmer in ancient China, who tasted
+                hundreds of herbs to test their medical value. People cannot explain why such an algorithm works, then
+                the significance of the algorithm might be limited to make a small improvement on performance, which
+                constrains further explorations. In contrast, if we can prove and grasp the common effective components
+                shared by many different algorithms, just like deriving the common effective ingredients from hundreds
+                of herbs, then the algorithm can be considered effective and reliable. Thus, these insights can be used
+                to guide the design of network structure and improve the performance of DNNs.
+            </p>
+            <p>In this article, we take the adversarial transferability of DNNs as an example to made attempts along
+                this direction. We have obtained some shallow conclusions to suggest possible explanations for the
+                previous algorithms that were proposed to improve the adversarial transferability. We hope to extract
+                some common effects in previous algorithms, and further improve the algorithm transferability. Although
+                we cannot ensure that these conclusions essentially reflect the nature of adversarial transferability,
+                we try to ensure that our results reflect some of the common effects of previous algorithms. Besides,
+                taking this study as a basis, we further explore the intrinsic nature of adversarial transferability.
+            </p>
+            <h4><strong>Enhancing adversarial transferability: from practice to theory</strong></h4>
+            <p>
+                In recent years, adversarial samples have attracted much attention in the field of deep learning. Behind
+                the superior performance of neural networks, there lies a very dangerous security risk —— adding a small
+                imperceptible perturbation to the input sample can completely change the prediction of a neural network.
+                Such maliciously modified input samples are called adversarial samples. Researchers also found that
+                these adversarial samples are transferable, which means that an adversarial sample generated on neural
+                network A may also be able to attack neural network B.
+            </p>
+            <p>
+                Many approaches have been proposed to enhance the adversarial transferability. However, the intrinsic
+                mechanism of these methods to enhance the transferability remains unclear, just like different herbs
+                tasted by Shennong. Although these methods can indeed enhance transferability, people are still unclear
+                about which components that really work. Here we summarize several common approaches to enhance
+                transferability.
+            <ul>
+                <li><strong>Variance-Reduced Attack (VR Attack)</strong>: During the attack, Gaussian noise is added to
+                    the input image to smooth the gradient against the input image.</li>
+                <li><strong>Momentum Iterative Attack (MI Attack)</strong>: Integrate the gradient momentum in the
+                    optimization of adversarial perturbations.</li>
+                <li><strong>Skip Connection Method (SGM Attack)</strong>: For the residual block structure of the
+                    network, increase the gradient weight of the skip-connection branch in the backpropagation process.
+                </li>
+                <li><strong>Diversity Input Attack (DI Attack)</strong>: During the attack, introduce random padding and
+                    random resizing on the input image to increase the diversity.</li>
+                <li><strong>Translation Invariant Attack (TI Attack)</strong>: Convolve the image gradient during the
+                    attack.</li>
+            </ul>
+            Our goal is to extract the common effects from the above methods.
+            </p>
+            <h4><strong>Adversarial Transferability: Extraction of useful components</strong></h4>
+            <p>We aim to explain adversarial transferability from a new perspective, the game-theoretic interaction
+                inside the adversarial perturbation. This explanation further extracts the common effects of the
+                previous transferability-boosting approaches.</p>
+            <h4><strong>Basis: Game-theoretic interaction</strong></h4>
+            <p>We define the game-theoretic interaction between two units of the adversarial perturbation based on the
+                Shapley value in game theory. Shapley values measure the importance of different adversarial
+                perturbation units. For two adversarial perturbation units i and j, the game-theoretic interaction
+                between them embodies the influence of i and j on each other, which can be defined as: the importance of
+                i when j is always present minus the importance of i when j is not present. If the interaction is
+                greater than 0, it means that there is a positive interaction between i and j, which facilitates the
+                importance of each other. If the interaction is less than 0, it means that there is a negative
+                interaction between i and j, which decreases the importance of each other.</p>
+            <h4><strong>Motivation: multi-step attack vs. single-step attack</strong></h4>
+            <p>Previous studies have suggested that, compared with the single-step attacks, the adversarial
+                perturbations generated by multi-step attacks are more likely to overfit to the source neural network,
+                which result in lower transferability. We analyzed multi-step attacks and single-step attacks from the
+                perspective of game-theoretic interactions, and deduced that the adversarial perturbations obtained from
+                multi-step adversarial attacks usually exhibit larger game-theoretic interactions than those obtained
+                from single-step attacks.</p>
+            <h4><strong>Hypothesis: there is a negative correlation between adversarial transferability and
+                    game-theoretic interaction</strong></h4>
+            <p>For single-step and multi-step attacks, we observed that:
+            <ul>
+                <li>Adversarial transferability: multi-step attack < single-step attack</li>
+                <li>Game-theoretic interaction: multi-step attack > single-step attack</li>
+            </ul>
+            <p>
+                Based on the above observations, we consider that the complex game-theoretic interactions reveal the
+                overfitting of the adversarial perturbations towards the source model, thus compromising its
+                transferability to the target network. Thus, we propose the following hypothesis.<br>
+                <i>The transferability of the adversarial perturbation is negatively correlated with the interaction
+                    inside the perturbation.
+                </i>
+            </p>
+            <h4><strong>Verification: Negative correlation between adversarial transferability and game-theoretic
+                    interaction</strong></h4>
+            <p>We empirically compare the interactions of the less transferable adversarial perturbations with those of
+                the more transferable ones, and thus the negative correlation is verified. Based on the ImageNet
+                dataset, we generated adversarial perturbations on ResNet-34/152 (RN-34/152) and DenseNet-121/201
+                (DN-121/201), respectively, and transferred adversarial perturbations generated on each ResNet to
+                DenseNets. Similarly, we also transferred adversarial perturbations generated on each DenseNet to
+                ResNets. Figure 1 shows the negative correlation between adversarial transferability and game-theoretic
+                interaction, where the horizontal axis indicates the average interaction of adversarial perturbations
+                through all testing images, and the vertical axis represents the average transfer utility of adversarial
+                perturbations on the target DNN.</p>
+            <figure class="p-5 text-center">
+                <img src="./blog-post/img/chapter-7-1.jpg" width="80%">
+                <!-- <figcaption class="pt-3 px-3 card-img-bottom">
+                    <h2 class="h5 font-weight-bold mb-2 font-italic">Figure 1</h2>
+                    <p class="mb-0 text-small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing
+                        elit, sed do eiusmod tempor.</p>
+                </figcaption> -->
+            </figure>
+            <h4><strong>A unified explanation: Reducing game-theoretic interaction is the common effects of various
+                    transferability-boosting methods</strong></h4>
+            <p>Beginning from the negative correlation between adversarial transferability and game-theoretic
+                interaction, we extracted the common effective component from various previous methods of enhancing
+                adversarial transferability, which is reducing game-theoretic interactions inside the adversarial
+                perturbation. We find that although the starting points and implementations of previous approaches to
+                enhance adversarial transferability are different, they all share the same effects - they all reduce the
+                game-theoretic interaction inside the adversarial perturbation during the attack. We theoretically
+                demonstrate that VR Attack, MI Attack, and SGM Attack produce adversarial perturbations with lower
+                interactions than the most common baseline (PGD Attack); we experimentally verify that DI Attack and TI
+                Attack reduce the interaction between perturbations.</p>
+            <h4><strong>Verification: Effectiveness of reducing game interactions</strong></h4>
+            <p>To further verify the negative correlation between the game-theoretic interaction and adversarial
+                transferability, we propose a loss function based on the game-theoretic interaction - directly
+                penalizing the interaction inside the perturbation in the attack. We optimize both the classification
+                loss function and the interaction-based loss function to generate the adversarial perturbation, which is
+                called the Interaction-Reduced Attack (IR Attack).</p>
+            <p> \begin{equation}
+                \max _{\delta}\left[\ell(h(x+\delta), y)-\lambda \ell_{\text {interaction }}\right], \quad \ell_{\text
+                {interaction }}=\mathbb{E}_{i, j}\left[I_{i j}(\delta)\right] \quad \text { s.t. }\|\delta\|_{p} \leq
+                \epsilon, x+\delta \in[0,1]^{n}
+                \end{equation}</p>
+            <p>Experimental results show that the interaction-based loss function can significantly improve the
+                transferability of the adversarial perturbation. As shown in Table 1, compared with baseline methods,
+                the interaction loss function improves the transferability of adversarial examples by 8.2%~35.4%. It is
+                worth noting that the interaction loss is only a direct measure to reduce the game-theoretic
+                interaction, and we can combine it with previous attacks that reduce the interaction inside the
+                perturbation to jointly reduce the interaction inside the perturbations to further improve the
+                adversarial transferability. Therefore, we propose HybridIR Attack (MI+VR+SGM+IR Attack). In our
+                experiments, the HybridIR Attack increases the transferability of the adversarial examples from
+                54.6%~98.8% to 70.2%~99.1%.</p>
         </div>
     </section>
 
@@ -588,7 +748,8 @@
         crossorigin="anonymous"></script>
     <script src="go-debug.js"></script>
     <script src="HyperlinkText.js"></script>
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- <script text="text/javascript" src="research-map.js"></script> -->
     <script text="text/javascript" src="research-map.js"></script>

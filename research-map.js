@@ -86,7 +86,7 @@ function init() {
     $(
       go.Part,
       "Table",
-      { position: new go.Point(0, -100), selectable: false },
+      { position: new go.Point(0, 0), selectable: false },
       $(go.TextBlock, "Part", {
         row: 0,
         font: "18pt Helvetica, Arial, sans-serif",
@@ -178,15 +178,13 @@ function init() {
   // Clicking on the node opens up the documentation for that class.
   diagram.nodeTemplate = $(
     go.Node,
-    "Vertical",
-    {
-      location: new go.Point(100, 0), // set the Node.location
-      locationSpot: go.Spot.Center,
-    },
+    "Auto",
     $(
       "HyperlinkText",
       // compute the URL to open for the documentation
-      (node) => "#" + node.data.name,
+      function (node) {
+        return "#" + node.data.name;
+      },
       // define the visuals for the hyperlink, basically the whole node:
       $(
         go.Panel,
