@@ -401,7 +401,7 @@ function init() {
     },
     {
       key: 19,
-      name: "Current studies to explore factors influencing the transferability are based on experiments",
+      name: "Current studies of boosting adversarial transferability are mainly based on heuristics and observasions",
       category: "leaf",
     },
     {
@@ -411,7 +411,7 @@ function init() {
     },
     {
       key: 21,
-      name: "Many techniques boosting the robustness are heuristic, whose mechanisms are largely missing",
+      name: "The essence of adversarial attack and robustness is still unclear",
       category: "leaf",
     },
   ];
