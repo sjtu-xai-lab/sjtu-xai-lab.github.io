@@ -350,7 +350,7 @@ function init() {
     },
     {
       key: 10,
-      name: "Explain the adversarial transferability",
+      name: "Explain the adversarial transferability (ICLR 2021)",
       part: "T",
       category: "middle",
       chapter: 7,
