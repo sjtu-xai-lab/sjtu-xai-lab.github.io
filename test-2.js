@@ -1,3 +1,9 @@
+/*
+ * :Author: Shaobo Wang
+ * :Date: 2022-04-17 19:11:45
+ * :LastEditors: Shaobo Wang
+ * :LastEditTime: 2022-04-17 19:13:45
+ */
 go.Shape.defineFigureGenerator("RoundedRectangle", function (shape, w, h) {
   // this figure takes one parameter, the size of the corner
   var p1 = 10; // default corner size
@@ -42,7 +48,7 @@ function init() {
 
   var diagram = $(
     go.Diagram,
-    "myDiagramDiv", // id of DIV
+    "test_2", // id of DIV
     {
       initialAutoScale: go.Diagram.UniformToFill,
       autoScale: go.Diagram.UniformToFill,
@@ -299,7 +305,7 @@ function init() {
     $(go.Shape, { strokeWidth: 1.5 }) // the link shape, with the default black stroke
   );
   var nodeDataArray = [
-    { key: 1, name: "Game-theoretic interactions", part: "F" },
+    { key: 1, name: "Subject-3", part: "F" },
     { key: 2, name: "Unifying different explanations", part: "P" },
     {
       key: 3,
