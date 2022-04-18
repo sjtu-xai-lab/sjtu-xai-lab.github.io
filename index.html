@@ -55,22 +55,18 @@
     </nav>
 
     <!-- Shoucase -->
-    <section id="intro" class="bg-dark bg-gradient text-light p-4 text-center text-sm-start">
+    <section id="intro" class="bg-dark bg-gradient text-light p-3 text-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 px-5 pt-5">
-                    <font face="Verdana">
-                        <h1>
-                            Lab for Interpretability and Theory-Driven Deep Learning
-                        </h1>
-                        <!-- <h3> Our mission is to significantly improve people's lives through
-                            our work in Artificial Intelligence
-                        </h3> -->
-                    </font>
+                <div class="col-12 px-5 pt-5">
+                    <h1>
+                        Lab for Interpretability and Theory-Driven Deep Learning
+                    </h1>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- People -->
     <section id="people" class="bg-white pb-5 m-0">
@@ -387,86 +383,247 @@
     <!-- Publications -->
     <section id="publications" class="p-5 bg-white">
         <div class="h2 text-center">
-            Selected Publications
+            Publications
         </div>
-        <!-- iclr2021-adv-transfer -->
-        <div class="container" style="margin-top: 30px;">
-            <div class="row">
-                <div class="col-xs-12 col-lg-4 img_responsive"
-                    style="text-align: center; vertical-align: middle; margin-top:-15px;">
-                    <img src="img/publications/iclr2021-adv-transfer/overview.jpg" width="90%" />
-                </div>
+        <center>
+            <ul class="nav btn-group btn-group-toggle" data-toggle="tabs" role="tablist">
+                <button href="#selected" class="btn btn-success active" data-toggle="tab">Show Selected</button>
+                <button href="#all" class="btn btn-success" data-toggle="tab">Show All</button>
+            </ul>
 
-                <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
-                    <strong>A Unified Approach to Interpreting and Boosting Adversarial Transferability
-                    </strong>
-                    <br>
-                    <a href="https://xinwang98.github.io/">Xin Wang*</a>,
-                    <a href="https://jie-ren.github.io/">Jie Ren*</a>,
-                    Shuyun Lin, Xiangming Zhu,
-                    <a href="https://yisenwang.github.io/">Yisen Wang</a>, and <strong>Quanshi Zhang</strong><br>
-                    <div style="color: brown;">ICLR 2021</div>
-                    <!-- <i> "A Unified Approach to Interpreting and Boosting Adversarial Transferability!" </i><br> -->
-                    <a href="https://arxiv.org/abs/2010.04055" class="btn btn-default btn-sm">Paper</a>
-                    <a href="https://github.com/xherdan76/A-Unified-Approach-to-Interpreting-and-Boosting-Adversarial-Transferability"
-                        class="btn btn-default btn-sm">Code</a>
-                    <a href="#c7" class="btn btn-default btn-sm">Post</a>
-                    <a href="https://zhuanlan.zhihu.com/p/369883667" class="btn btn-default btn-sm">Blog (Chinese)</a>
+            <div class="tab-content text-center">
+                <!-- Selected Publications -->
+                <div role="tabpanel" class="tab-pane active" id="selected">
+                    <!-- iclr2021-adv-transfer -->
+                    <div class="container" style="margin-top: 30px;">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4 img_responsive"
+                                style="text-align: center; vertical-align: middle; margin-top:-15px;">
+                                <img src="img/publications/iclr2021-adv-transfer/overview.jpg" width="90%" />
+                            </div>
+
+                            <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
+                                <strong>A Unified Approach to Interpreting and Boosting Adversarial Transferability
+                                </strong>
+                                <br>
+                                <a href="https://xinwang98.github.io/">Xin Wang*</a>,
+                                <a href="https://jie-ren.github.io/">Jie Ren*</a>,
+                                Shuyun Lin, Xiangming Zhu,
+                                Yisen Wang, and <strong>Quanshi
+                                    Zhang</strong><br>
+                                <div style="color: brown;">ICLR 2021</div>
+                                <!-- <i> "A Unified Approach to Interpreting and Boosting Adversarial Transferability!" </i><br> -->
+                                <a href="https://arxiv.org/abs/2010.04055" class="btn btn-default btn-sm">Paper</a>
+                                <a href="https://github.com/xherdan76/A-Unified-Approach-to-Interpreting-and-Boosting-Adversarial-Transferability"
+                                    class="btn btn-default btn-sm">Code</a>
+                                <a href="#c7" class="btn btn-default btn-sm">Post</a>
+                                <a href="https://zhuanlan.zhihu.com/p/369883667" class="btn btn-default btn-sm">Blog
+                                    (Chinese)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- icml2021-feature-complexity -->
+                    <div class="container" style="margin-top: 30px;">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4 img_responsive"
+                                style="text-align: center; vertical-align: middle; margin-top:-15px;">
+                                <img src="./img/publications/icml2021-feature-complexity/overview.png" width="60%" />
+                            </div>
+
+                            <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
+                                <strong>Interpreting and Disentangling Feature Components of Various Complexity from
+                                    DNNs
+                                </strong>
+                                <br>
+                                <a href="https://jie-ren.github.io/">Jie Ren*</a>,
+                                <a href="https://lmjjjjjj.github.io/">Mingjie Li*</a>,
+                                Zexu Liu,
+                                and <strong>Quanshi Zhang</strong>
+                                <br>
+                                <div style="color: brown;">ICML 2021</div>
+                                <a href="http://proceedings.mlr.press/v139/ren21b/ren21b.pdf"
+                                    class="btn btn-default btn-sm">Paper</a>
+                                <a href="https://github.com/LMJJJJJJ/feature-complexity"
+                                    class="btn btn-default btn-sm">Code</a>
+                                <a href="https://zhuanlan.zhihu.com/p/391220772" class="btn btn-default btn-sm">Blog
+                                    (Chinese)</a>
+                                <a href="https://www.zhihu.com/zvideo/1433603508231053312"
+                                    class="btn btn-default btn-sm">Video
+                                    (English)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- neurips2021-visualization -->
+                    <div class="container" style="margin-top: 30px;">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4 img_responsive"
+                                style="text-align: center; vertical-align: middle; margin-top:-15px;">
+                                <img src="./img/publications/neurips2021-visualization/overview.png" width="80%" />
+                            </div>
+
+                            <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
+                                <strong>Visualizing the Emergence of Intermediate Visual Patterns in DNNs
+                                </strong>
+                                <br>
+                                <a href="https://lmjjjjjj.github.io/">Mingjie Li</a>,
+                                <a href="https://gszfwsb.github.io/">Shaobo Wang</a>,
+                                and <strong>Quanshi Zhang</strong>
+                                <br>
+                                <div style="color: brown;">NeurIPS 2021</div>
+                                <a href="https://arxiv.org/abs/2111.03505" class="btn btn-default btn-sm">Paper</a>
+                                <a href="https://zhuanlan.zhihu.com/p/444149082" class="btn btn-default btn-sm">Blog
+                                    (Chinese)</a>
+                                <a href="https://www.zhihu.com/zvideo/1433602733882990593"
+                                    class="btn btn-default btn-sm">Video
+                                    (English)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Publications -->
+                <div role="tabpanel" class="tab-pane justify-content-center" id="all">
+                    <div
+                        style="margin-right: auto;margin-left: auto; margin-top: 10px; margin-bottom: 100px; width: 70%;text-align:justify; text-justify:inter-ideograph">
+                        <ol>
+                            <li>
+                                Discovering and Explaining the Representation Bottleneck of DNNs
+                                Huiqi Deng, Qihan Ren, Hao Zhang, and Quanshi Zhang (Correspondence)
+                                ICLR (Oral), 2021
+                            </li>
+                            <li>
+                                Exploring Image Regions Not Well Encoded by an INN
+                                Zenan Ling, Fan Zhou, Meng Wei, and Quanshi Zhang (Correspondence)
+                                AISTATS, 2022
+                            </li>
+                            <li>Interpretable Generative Adversarial Networks
+                                Chao Li (Correspondence), Kelu Yao, Jin Wang, Boyu Diao, Yongjun Xu, and Quanshi Zhang
+                                (Correspondence)
+                                AAAI (Oral), 2022
+                            </li>
+                            <li>
+                                Interpretable Generative Adversarial Networks
+                                Chao Li (Correspondence), Kelu Yao, Jin Wang, Boyu Diao, Yongjun Xu, and Quanshi Zhang
+                                (Correspondence)
+                                AAAI (Oral), 2022
+                            </li>
+                            <li>
+                                A Unified Game-Theoretic Interpretation of Adversarial Robustness
+                                Jie Ren*, Die Zhang*, Yisen Wang*, Lu Chen, Zhanpeng Zhou, Yiting Chen, Xu Cheng, Xin
+                                Wang,
+                                Meng Zhou, Jie Shi, and Quanshi Zhang (Correspondence)
+                                Neurips, 2021
+                            </li>
+
+                            <li>
+                                Visualizing the Emergence of Intermediate Visual Patterns in DNNs
+                                Mingjie Li, Shaobo Wang, and Quanshi Zhang (Correspondence)
+                                Neurips, 2021
+                            </li>
+
+                            <li>
+                                Interpreting Representation Quality of DNNs for 3D Point Cloud Processing
+                                Wen Shen, Qihan Ren, Dongrui Liu, and Quanshi Zhang (Correspondence)
+                                Neurips, 2021
+                            </li>
+
+
+
+                            Interpreting Attributions and Interactions of Adversarial Attacks
+                            Xin Wang, Shuyun Lin, Hao Zhang, Yufei Zhu, and Quanshi Zhang (Correspondence)
+                            ICCV, 2021
+                            [PDF]
+
+                            Interpreting and Disentangling Feature Components of Various Complexity from DNNs
+                            Jie Ren*, Mingjie Li*, Zexu Liu, and Quanshi Zhang (Correspondence)
+                            ICML, 2021
+                            [PDF]
+
+                            Interpretable Compositional Convolutional Neural Networks
+                            Wen Shen*, Zhihua Wei*, Shikun Huang, Binbin Zhang, Jiaqi Fan, Ping Zhao, and Quanshi Zhang
+                            (Correspondence)
+                            IJCAI, 2021
+                            [PDF] [Code]
+
+                            Verifiability and Predictability: Interpreting Utilities of Network Architectures for 3D
+                            Point Cloud Processing
+                            Wen Shen*, Zhihua Wei*, Shikun Huang, Binbin Zhang, Panyue Chen, Ping Zhao, and Quanshi
+                            Zhang (Correspondence)
+                            CVPR, 2021
+                            [PDF]
+
+                            A Unified Approach to Interpreting and Boosting Adversarial Transferability
+                            Xin Wang*, Jie Ren*, Shuyun Lin, Xiangming Zhu, Yisen Wang, Quanshi Zhang (Correspondence)
+                            ICLR, 2021
+                            [PDF] [Code]
+
+                            Interpreting and Boosting Dropout from a Game-Theoretic View
+                            Hao Zhang, Sen Li, Yinchao Ma, Mingjie Li, Yichen Xie, Quanshi Zhang (Correspondence)
+                            ICLR, 2021
+                            [PDF]
+
+                            Interpreting Multivariate Shapley Interactions in DNNs
+                            Hao Zhang, Yichen Xie, Longjie Zheng, Die Zhang, and Quanshi Zhang (Correspondence)
+                            AAAI, 2021
+                            [PDF] [Code]
+
+                            Building Interpretable Interaction Trees for Deep NLP Models
+                            Die Zhang, Huilin Zhou, Hao Zhang, Xiaoyi Bao, Da Huo, Ruizhao Chen, Xu Cheng, Mengyue Wu,
+                            and Quanshi Zhang (Correspondence)
+                            AAAI, 2021
+                            [PDF] [Code]
+
+                            3D-Rotation-Equivariant Quaternion Neural Networks
+                            Binbin Zhang, Wen Shen, Shikun Huang, Zhihua Wei, and Quanshi Zhang (Correspondence)
+                            ECCV, 2020
+                            [PDF] [Code]
+
+                            Explaining Knowledge Distillation by Quantifying the Knowledge
+                            Xu Cheng, Zhefan Rao, Yilan Chen, and Quanshi Zhang (Correspondence)
+                            CVPR 2020
+                            [PDF]
+
+                            Knowledge Consistency between Neural Networks and Beyond
+                            Ruofan Liang, Tianlin Li, Longfei Li, Jing Wang, and Quanshi Zhang (Correspondence)
+                            ICLR 2020
+                            [PDF] [Code] [机器之心]
+
+                            Interpretable Complex-Valued Neural Networks for Privacy Protection
+                            Liyao Xiang, Hao Zhang, Haotian Ma, Yifan Zhang, Jie Ren, and Quanshi Zhang (Correspondence)
+                            ICLR 2020
+                            [arXiv]
+
+                            Explaining Neural Networks Semantically and Quantitatively
+                            Runjin Chen, Hao Chen, Jie Ren, Ge Huang, Quanshi Zhang (Correspondence)
+                            ICCV, 2019 (Oral)
+                            [PDF]
+
+                            Towards A Deep and Unified Understanding of Deep Neural Models in NLP
+                            Chaoyu Guan, Xiting Wang, Quanshi Zhang (Correspondence), Runjin Chen, Di He, Xing Xie
+                            ICML, 2019
+                            [PDF] [Code]
+
+                            Interpreting CNNs via Decision Trees
+                            Quanshi Zhang, Yu Yang, Haotian Ma, and Ying Nian Wu
+                            CVPR, 2019
+                            [PDF] [机器之心]
+
+                            Unsupervised Learning of Neural Networks to Explain Neural Networks
+                            Quanshi Zhang, Yu Yang, Yuchen Liu, Ying Nian Wu, and Song-Chun Zhu
+                            Full paper in arXiv:1805.07468, 2018
+                            Extended abstract in AAAI-19 Workshop on Network Interpretability for Deep Learning, 2019
+                            [PDF]
+
+                            Network Transplanting
+                            Quanshi Zhang, Yu Yang, Qian Yu, Ying Nian Wu, and Song-Chun Zhu
+                            Full paper in arXiv:1804.10272, 2018
+                            Extended abstract in AAAI-19 Workshop on Network Interpretability for Deep Learning, 2019
+                            [PDF]
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
+        </center>
 
-        <!-- icml2021-feature-complexity -->
-        <div class="container" style="margin-top: 30px;">
-            <div class="row">
-                <div class="col-xs-12 col-lg-4 img_responsive"
-                    style="text-align: center; vertical-align: middle; margin-top:-15px;">
-                    <img src="./img/publications/icml2021-feature-complexity/overview.png" width="60%" />
-                </div>
-
-                <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
-                    <strong>Interpreting and Disentangling Feature Components of Various Complexity from DNNs
-                    </strong>
-                    <br>
-                    <a href="https://jie-ren.github.io/">Jie Ren*</a>,
-                    <a href="https://lmjjjjjj.github.io/">Mingjie Li*</a>,
-                    Zexu Liu,
-                    and <strong>Quanshi Zhang</strong>
-                    <br>
-                    <div style="color: brown;">ICML 2021</div>
-                    <a href="http://proceedings.mlr.press/v139/ren21b/ren21b.pdf"
-                        class="btn btn-default btn-sm">Paper</a>
-                    <a href="https://github.com/LMJJJJJJ/feature-complexity" class="btn btn-default btn-sm">Code</a>
-                    <a href="https://zhuanlan.zhihu.com/p/391220772" class="btn btn-default btn-sm">Blog (Chinese)</a>
-                    <a href="https://www.zhihu.com/zvideo/1433603508231053312" class="btn btn-default btn-sm">Video
-                        (English)</a>
-                </div>
-            </div>
-        </div>
-        <!-- neurips2021-visualization -->
-        <div class="container" style="margin-top: 30px;">
-            <div class="row">
-                <div class="col-xs-12 col-lg-4 img_responsive"
-                    style="text-align: center; vertical-align: middle; margin-top:-15px;">
-                    <img src="./img/publications/neurips2021-visualization/overview.png" width="80%" />
-                </div>
-
-                <div class="col-xs-12 col-lg-8" style="text-align: left; vertical-align: middle;">
-                    <strong>Visualizing the Emergence of Intermediate Visual Patterns in DNNs
-                    </strong>
-                    <br>
-                    <a href="https://lmjjjjjj.github.io/">Mingjie Li</a>,
-                    <a href="https://gszfwsb.github.io/">Shaobo Wang</a>,
-                    and <strong>Quanshi Zhang</strong>
-                    <br>
-                    <div style="color: brown;">NeurIPS 2021</div>
-                    <a href="https://arxiv.org/abs/2111.03505" class="btn btn-default btn-sm">Paper</a>
-                    <a href="https://zhuanlan.zhihu.com/p/444149082" class="btn btn-default btn-sm">Blog (Chinese)</a>
-                    <a href="https://www.zhihu.com/zvideo/1433602733882990593" class="btn btn-default btn-sm">Video
-                        (English)</a>
-                </div>
-            </div>
-        </div>
     </section>
 
 
@@ -893,11 +1050,6 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-    </script>
-    <script text="text/javascript">
-        $('.carousel').carousel({
-            interval: 2000
-        })
     </script>
 
     <!-- JavaScript Bundle with Popper -->
